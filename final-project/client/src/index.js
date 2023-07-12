@@ -1,9 +1,11 @@
+//~
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//renders the <App /> component within the <React.StrictMode> component and places it inside the HTML element with the ID "root".
 ReactDOM.render(
   <React.StrictMode>
     <App />

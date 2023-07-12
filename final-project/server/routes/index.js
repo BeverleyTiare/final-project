@@ -1,11 +1,12 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User } = require('../../models');
 const { authMiddleware } = require('../../utils/auth');
 const { route } = require('./user-routes');
+//const { route } = require('./sleep-routes');
 
 // GET /api/users
 router.get('/', (req, res) => {
-    // Access our User model and run .findAll() method)
+    // Access User model and run.findAll() method)
     User.findAll({
         attributes: { exclude: ['password'] }
     })

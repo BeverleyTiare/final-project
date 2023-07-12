@@ -1,6 +1,8 @@
+// Purpose: User model for the database
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+// import schema
 const userSchema = new Schema({
   username: {
     type: String,
@@ -20,6 +22,16 @@ const userSchema = new Schema({
     minlength: 5,
   }
 });
+
+  /*sleep:[
+{
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+],
+}];*/
+
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {

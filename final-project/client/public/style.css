@@ -1,39 +1,15 @@
-/*materialize*/
-
-/*import code from Epigenetic proj*/
-
-
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333;
-    background-color: #fff;
-    font-weight: 400;
-    text-align: left;
-    box-sizing: border-box;
-}
-
-/* Path: final-project/client/src/index.css */
-
-code {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
 body{
 	background:#000;
 }
-
 .brainContainer{
-    width:50vw;
-    height:50vw;
-    max-height:400px;
-    max-width:400px;
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
+    /* width:50vw; */
+    height:100%;
+    /* max-height:400px;
+    max-width:400px; */
+    /* position:absolute; */
+    /* left:50%;
+    top:50%;*/
+    transform:translate(0%,0%); 
     overflow:hidden;
     cursor:pointer;
     z-index:-1;

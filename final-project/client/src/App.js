@@ -12,11 +12,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-//import userGoal from './pages/userGoal';
 import Header from './components/Header';
 import Footer from './components/Footer';
+// import SleepData from './pages/SleepData';
+// import Profile from './pages/Profile';
 
-// Construct our main GraphQL API endpoint
+// Construct main GraphQL API 'endpoint' that will connect our ApolloClient instance with the GraphQL API
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -35,7 +36,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  // Set up client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
@@ -45,9 +46,11 @@ function App() {
     // <ChakraProvider> 
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div style={{    minHeight: '100vh',
+    flexDirection: 'column',
+    display: 'flex'}}>
           <Header />
-          <div className="container">
+          <div className="container" style={{margin: "0 auto"}}>
             <Routes>
               <Route 
                 path="/" 
@@ -61,7 +64,20 @@ function App() {
                 path="/signup" 
                 element={<Signup />} 
               />
+              {/* <Route 
+                path="/me" 
+                element={<Profile />}//Profile
+              /> */}
+              {/* <Route 
+                path="/profiles/:username" //Profile
+                element={<Profile />}
+              /> */}
+              {/* <Route 
+                path="/sleepdata" 
+                element={<SleepData />} // sleepdata
+              /> */}
             </Routes>
+            {/* <BrainImage /> */}
           </div>
           <Footer />
         </div>

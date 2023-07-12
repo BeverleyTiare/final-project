@@ -1,6 +1,8 @@
+// Purpose: To create the resolvers for the User model.
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');
+//const { Sleep } = require('../models');
 
 const resolvers = {
   Query: {
@@ -11,20 +13,20 @@ const resolvers = {
       return User.findOne({ username });
     },
   },
+  //sleep: async (parent, { sleepId }) => {
+  //  return Sleep.findOne({ _id: sleepId });
+  //},
+
 
   Mutation: {
-    // TODO: Add comments to each line of code below to describe the functionality below
-    //addUser creates a new user and signs a token for the user.
     //const user = await User.create(args); creates a new user with the args passed in.
-    //cpnst token = signToken(user); creates a token for the user.
+    //const token = signToken(user); creates a token for the user.
      addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-
       return { token, user };
     },
   
-    // TODO: Add comments to each line of code below to describe the functionality below
     //login checks if the user exists and if the password is correct.
     //if the user exists and the password is correct, a token is created for the user.
     login: async (parent, { email, password }) => {
@@ -42,6 +44,21 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    /*addSleep: async (parent, args, context) => {
+      if (context.user)
+      {
+        const sleep = await Sleep.create({ ...args, username: context.user.username });
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { sleep: sleep._id } },
+          { new: true }
+        );
+        return sleep;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },*/
+
+    //add / remove etc??
 
   },
 };

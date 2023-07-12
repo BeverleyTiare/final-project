@@ -9,7 +9,6 @@ const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
-  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -19,10 +18,9 @@ const Login = (props) => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -33,7 +31,6 @@ const Login = (props) => {
       console.error(e);
     }
 
-    // clear form values
     setFormState({
       email: '',
       password: '',
@@ -41,53 +38,61 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+    <div style={{maxWidth: "1024px", margin: "40px auto"}} className="ui  segment">
+    <div className="ui  form">
+      {data ? (
+        <p>
+          Success! You may now head{' '}
+          <Link to="/">back to the homepage.</Link>
+        </p>
+      ) : (
+        <form onSubmit={handleFormSubmit} className="ui form" style={{padding: "10px"}}>
+          <div className="ui one column grid" style={{ marginBottom: "1rem", }}>
+            <div class="field column">
+              <label for="email">Email</label>
+              <input
+                className="form-input"
+                id="email"
+                placeholder="Email"
+                name="email"
+                type="email"
+                required
+                value={formState.email}
+                onChange={handleChange}
+              />
+            </div>  
+            <div class="field column">
+              <label for="password">Password</label>
+              <input
+                className="form-input"
+                id="password"
+                placeholder="******"
+                name="password"
+                type="password"
+                required
+                value={formState.password}
+                onChange={handleChange}
+              />
+            </div>
           </div>
+         
+          <button
+            className="ui bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded"
+            style={{ cursor: 'pointer', display: "block", margin: "0 auto", backgroundColor: "#681472", color: "white", padding: "10px 25px" }}
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      )}
+
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">
+          {error.message}
         </div>
-      </div>
-    </main>
+      )}
+    </div>
+  </div>
   );
 };
 

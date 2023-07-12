@@ -1,5 +1,7 @@
+//jwt verify method verifies the token and decodes the data
 import decode from 'jwt-decode';
 
+// Create a new class to instantiate the methods created in auth.js
 class AuthService {
   getProfile() {
     return decode(this.getToken());
@@ -37,5 +39,5 @@ class AuthService {
     window.location.reload();
   }
 }
-
+// eslint-disable-next-line
 export default new AuthService();
