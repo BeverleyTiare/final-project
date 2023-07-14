@@ -14,6 +14,10 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Sleep from './pages/Sleep';
+import Epigenetics from './pages/Epigenetics';
+import PreventativeHealthcare from './pages/PreventativeHealthcare';
+// import Yourplan from './pages/Yourplan';
 // import SleepData from './pages/SleepData';
 // import Profile from './pages/Profile';
 

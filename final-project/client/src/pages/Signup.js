@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';//useState hook and useEffect hook
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -15,7 +15,7 @@ const Signup = () => {
     terms: false,
   });
 
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser, { error, data }] = useMutation(ADD_USER);//mutation hook
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -32,7 +32,6 @@ const Signup = () => {
     //   .form({
     //     fields: {
     //       name: 'empty',
-    //       gender: 'empty',
     //       username: 'empty',
     //       password: ['minLength[6]', 'empty'],
     //       skills: ['minCount[2]', 'empty'],

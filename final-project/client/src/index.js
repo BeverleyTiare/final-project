@@ -1,4 +1,4 @@
-//~
+//Index.js enables the React app to render in the browser.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

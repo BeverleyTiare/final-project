@@ -1,9 +1,9 @@
+//GRaphHQL here: graphql.org for auth and login
+
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';//useQuery hook
 
-//import ThoughtForm from '../components/ThoughtForm';
-//import ThoughtList from '../components/ThoughtList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -26,7 +26,7 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  if (!user?.username) { //!user?.username: conditional check to see if the user object exists and has a username property
     return (
       <h4>
         You need to be logged in to see this. Use the navigation links above to
@@ -34,8 +34,7 @@ const Profile = () => {
       </h4>
     );
   }
-
-  //change
+  //delete?
   return (
     <div>
       <div className="flex-row justify-center mb-3">

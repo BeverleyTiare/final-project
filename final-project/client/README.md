@@ -6,7 +6,7 @@ This user-focused MERN (MongoDB, Express.js, React.js, Node.js) Stack project is
 
 - User registration and authentication
 - Sleep data tracking and storage
-- Integration with an open API for sleep-related information
+- Integration with an open API for sleep-related information((??))
 - User-friendly UI for viewing and managing sleep data
 - Data visualization for sleep patterns and trends ((??))
 - Use of queries and mutations for retrieving, adding, updating, and deleting data.
@@ -42,14 +42,14 @@ These components collectively work together within the application architecture 
 - Open API: Integration with an open API for retrieving additional sleep-related information.
 - Heroku deployment 
 
-## Installation
+## Installation (??)
 
 1. Clone the repository: `git clone https://github.com/your-username/epigenetics-sleep-project.git`
 2. Navigate to the project directory: `cd epigenetics-sleep-project`
 3. Install the server dependencies: `npm install`
 4. Install the client dependencies: `cd client && npm install`
 5. Return to the project root: `cd ..`
-6. Start the development server: `npm run dev`
+6. Start the development server: `npm run dev` 
 
 Make sure you have MongoDB installed and running on your local machine or provide the appropriate MongoDB connection URL.
 
@@ -57,7 +57,7 @@ Make sure you have MongoDB installed and running on your local machine or provid
 
 - Server Configuration: Set up your MongoDB connection URL and other server configuration variables in the `.env` file located in the root directory.
 
-## API Integration
+## API Integration (??)
 
 This project integrates with an open API for retrieving sleep-related information. To configure the API integration:
 
@@ -65,14 +65,21 @@ This project integrates with an open API for retrieving sleep-related informatio
 2. Set the API key in the appropriate environment variable in the `.env` file.
 3. Modify the API integration code in the project to make the necessary API requests and handle the responses.
 
-## Links 
+## Links : TODO
 -   The URL of the deployed application:
     
 -   The URL of the GitHub repository: 
 
-## License: TODO
+## License:
+MIT License
 
-## Acknowledgements: TODO
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Acknowledgements:
+Bootcamp TAs, tutors, opensource code sites, W3 schools, MDN, stackoverflow, medium, full stack blog.
+
 
 
 ## Contact

@@ -1,8 +1,5 @@
 /*materialize*/
 
-/*import code from Epigenetic proj*/
-
-
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -95,3 +92,7 @@ path{
 		opacity:0;
   }
 }
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
