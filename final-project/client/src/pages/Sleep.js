@@ -1,4 +1,4 @@
-//https://admin.typeform.com/form/ATFpS9yp/create?block=e2180d42be44ba18
+
 //https://aasm.org/resources/medsleep/(harding)questions.pdf
 import React, { useState } from 'react';
 import 'survey-core/defaultV2.min.css';
@@ -44,20 +44,87 @@ const surveyJson = {
     ],
   },
   {
-    name: 'demoQuestion',
-    title: 'Demo Question?',
+    name: 'Sleep onset',
+    title: 'How long does it take you to fall asleep?',
     type: "radiogroup",
     choices: [
-      { value: '1', text: '1 - Very Poor' },
-      { value: '2', text: '2 - Poor' },
-      { value: '3', text: '3 - Fair' },
-      { value: '4', text: '4 - Good' },
-      { value: '5', text: '5 - Very Good' },
-      { value: '6', text: '6 - Excellent' },
+      { value: '1', text: '1 - I have trouble falling asleep' },
+      { value: '2', text: '2 - More than 60 minutes' },
+      { value: '3', text: '3 - 45-60 minutes' },
+      { value: '4', text: '4 - 30-45 minutes' },
+      { value: '5', text: '5 - 15-30 minutes' },
+      { value: '6', text: '6 - less than 15 minutes' },
     ],
   },
+  {
+    name: 'Alertness level',
+    title: 'How alert do you feel right now?',
+    type: "radiogroup",
+    choices: [
+      { value: '1', text: '1 - Very sleepy and fighting sleep' },
+      { value: '2', text: '2 - Fogginess and slowing down' },
+      { value: '3', text: '3 - Fatigued but not at peak'},
+      { value: '4', text: '4 - Relaxed but not full alert' },
+      { value: '5', text: '5 - Functioning at high level' },
+      { value: '6', text: '6 - Wide awake and at your peak' },
+    ],
+  },
+  {
+    name: 'Insomnia signs',
+    title: 'Do you experience any of the following ?',
+    type: "checkbox",
+    choices: [
+      { value: '1', text: '1 - are you unable to fall asleep in 15 minutres or less?' },
+      { value: '2', text: '2 - Do you wake up several times during the night and cannot get back to sleep?' },
+      { value: '3', text: '3 - Do you wake up too early in the morning?'},
+      { value: '4', text: '4 - Do you feel unrefreshed when you wake up?' },
+      { value: '5', text: '5 - Do you feel tired or sleepy during the day, even if you have had enough sleep?' },
+      { value: '6', text: '6 - Do you have trouble concentrating during the day because you are sleepy?' },
+    ],
+  },
+  {
+    name: 'Sleep quantity',
+    title: 'How many hours of sleep do you get on average?',
+    type: "radiogroup",
+    choices: [
+      { value: '1', text: '1 - 1-4 hours' },
+      { value: '2', text: '2 - 2-5 hours' },
+      { value: '3', text: '3 - 3-6 hours' },
+      { value: '4', text: '4 - 4-7 hours' },
+      { value: '5', text: '5 - 5-8 hours' },
+      { value: '6', text: '6 - 6-9 hours' },
+    ],
+  },
+  {
+    name: 'Nocturnal awakenings',
+    title: 'How many times do you wake up during the night?',
+    type: "radiogroup",
+    choices: [
+      { value: '1', text: '1 - 5+ times' },
+      { value: '2', text: '2 - 4 times' },
+      { value: '3', text: '3 - 3 times' },
+      { value: '4', text: '4 - 2 times' },
+      { value: '5', text: '5 - 1 times' },
+      { value: '6', text: '6 - I do not wake up during the night' },
+    ],
+  },
+  {
+    name: 'Habits',
+    title: 'What habits may affect your sleep?',
+    type: "checkbox",
+    choices: [
+      { value: '1', text: '1 -  I drink coffee or tea' },
+      { value: '2', text: '2 -  I drink alcohol in the evening' },
+      { value: '3', text: '3 -  I smoke regularly' },
+      { value: '4', text: '4 -  I eat late' },
+      { value: '5', text: '5 -  I exercise late' },
+      { value: '6', text: '6 -  I use my phone or computer before bed' },
+    ],
+  },
+  
 ]};
 
+/*
 const questions = [
   {
     id: 'question1',
@@ -151,6 +218,7 @@ const questions = [
     questionType: 'multiselect',
   },
 ]
+*/
 
 
 //useState: hook to enable 
