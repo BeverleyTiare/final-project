@@ -1,6 +1,62 @@
 //https://admin.typeform.com/form/ATFpS9yp/create?block=e2180d42be44ba18
 //https://aasm.org/resources/medsleep/(harding)questions.pdf
 import React, { useState } from 'react';
+import 'survey-core/defaultV2.min.css';
+import { Survey, Model } from 'survey-react-ui';
+
+
+// Modern theme
+ //import 'survey-core/modern.min.css';
+
+const surveyJson = {
+  elements: [{
+    name: "FirstName",
+    title: "Enter your first name:",
+    type: "text"
+  }, {
+    name: "LastName",
+    title: "Enter your last name:",
+    type: "text"
+  }, {
+    name: "SleepHabits",
+    title: "What habits may affect your sleep?",
+    type: "checkbox",
+    choices: [
+      "I drink coffee or tea",
+      "I drink alcohol",
+      "I smoke",
+      "I exercise",
+      "I eat late at night",
+      "I use my phone or computer before bed"
+    ]
+  }, 
+  {
+    name: 'SleepQuality',
+    title: 'How would you rate the quality of your sleep?',
+    type: "radiogroup",
+    choices: [
+      { value: '1', text: '1 - Very Poor' },
+      { value: '2', text: '2 - Poor' },
+      { value: '3', text: '3 - Fair' },
+      { value: '4', text: '4 - Good' },
+      { value: '5', text: '5 - Very Good' },
+      { value: '6', text: '6 - Excellent' },
+    ],
+  },
+  {
+    name: 'demoQuestion',
+    title: 'Demo Question?',
+    type: "radiogroup",
+    choices: [
+      { value: '1', text: '1 - Very Poor' },
+      { value: '2', text: '2 - Poor' },
+      { value: '3', text: '3 - Fair' },
+      { value: '4', text: '4 - Good' },
+      { value: '5', text: '5 - Very Good' },
+      { value: '6', text: '6 - Excellent' },
+    ],
+  },
+]};
 
 const questions = [
   {
@@ -100,6 +156,7 @@ const questions = [
 //useState: hook to enable 
 const SleepQuestionnaire = () => {
   const [responses, setResponses] = useState({});
+  const survey = new Model(surveyJson);
 
   const handleChange = (questionId, value) => {
     setResponses((prevResponses) => ({
@@ -119,8 +176,9 @@ const SleepQuestionnaire = () => {
   return (
     <div className="form-container">
       <h1>Sleep Questionnaire</h1>
+      <Survey model={survey} />;
 
-      
+
       {/*
       <form onSubmit={handleSubmit}>  
 
