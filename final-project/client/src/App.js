@@ -65,9 +65,21 @@ function App() {
                 element={<Login />} 
               />
               <Route 
+                path="/epigenetics" 
+                element={<Epigenetics/>} 
+              />
+              <Route 
+                path="/preventativehealthcare" 
+                element={<PreventativeHealthcare />} 
+              />
+              <Route 
                 path="/signup" 
                 element={<Signup />} 
               />
+              <Route
+                path="/sleep"
+                element={<Sleep />}
+              />  
               {/* <Route 
                 path="/me" 
                 element={<Profile />}//Profile

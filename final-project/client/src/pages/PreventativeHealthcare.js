@@ -7,7 +7,7 @@ const PreventativeHealthcare = () => {
         <h1 className="text-4xl font-bold">Preventative Healthcare</h1>
       </header>
       <div className="px-8">
-      <img src="./assets/health.jpg" alt="sleeping baby" />
+      <img src="./assets/health.png" alt="sleeping baby" />
         <p className="my-4">
         Sleep accounts for one-quarter to one-third of the human lifespan. But what exactly happens when you sleep? Before the 1950s, most people believed sleep was a passive activity during which the body and brain were dormant. “But it turns out that sleep is a period during which the brain is engaged in a number of activities necessary to life—which are closely linked to quality of life,” says Johns Hopkins sleep expert and neurologist Mark Wu, M.D.
         <a href="https://www.americanbrainfoundation.org/why-sleep-matters-for-brain-health/">Learn more</a>

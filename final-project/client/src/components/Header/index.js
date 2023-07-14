@@ -96,9 +96,12 @@ const Header = () => {
           <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
             <nav>
               <ul style={{color: '#c7c7c7'}} className="md:flex items-center justify-between text-base pt-4 md:pt-0">
-                <li><a className="inline-block no-underline  hover:underline py-2 px-4" href="#epigenetics">Epigenetics</a></li>
-                <li><a className="inline-block no-underline  hover:underline py-2 px-4" href="#sleep">Sleep</a></li>
-                <li><a className="inline-block no-underline  hover:underline py-2 px-4" href="#healthcare">Preventative Healthcare</a></li>
+                
+              <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/">Home</Link></li>
+                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/epigenetics">Epigenetics</Link></li>
+                
+                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/sleep">Sleep</Link></li>
+                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/preventativehealthcare">Preventative Healthcare</Link></li>
                 <li><a className="inline-block no-underline  hover:underline py-2 px-4" href="#Your plan">Your Plan</a></li>
               </ul>
             </nav>
