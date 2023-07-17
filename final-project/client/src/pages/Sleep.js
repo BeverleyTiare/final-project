@@ -1,8 +1,10 @@
 
 //https://aasm.org/resources/medsleep/(harding)questions.pdf
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import 'survey-core/defaultV2.min.css';
 import { Survey, Model } from 'survey-react-ui';
+import { useMutation } from '@apollo/client';
+import { ADD_SLEEP } from '../utils/mutations';
 
 
 // Modern theme
@@ -124,127 +126,42 @@ const surveyJson = {
   
 ]};
 
-/*
-const questions = [
-  {
-    id: 'question1',
-    question: 'How would you rate the quality of your sleep?',
-    options: [
-      { value: '1', label: '1 - Very Poor' },
-      { value: '2', label: '2 - Poor' },
-      { value: '3', label: '3 - Fair' },
-      { value: '4', label: '4 - Good' },
-      { value: '5', label: '5 - Very Good' },
-      { value: '6', label: '6 - Excellent' },
-    ],
-    questionType: 'select',
-  },
-  {
-    id: 'question2',
-    question: 'How long does it usually take you to fall asleep?',
-    options: [
-      { value: '1', label: '1 - I have trouble falling asleep' },
-      { value: '2', label: '2 - More than 60 minutes' },
-      { value: '3', label: '3 - 45 to 60 minutes' },
-      { value: '4', label: '4 - 30 to 45 minutes' },
-      { value: '5', label: '5 - 15 to 30 minutes' },
-      { value: '6', label: '6 - Less than 15 minutes' },
-    ],
-    questionType: 'select',
-  },
-  {
-    id: 'question3',
-    question: 'How alert do you feel right now?',
-    options: [
-      { value: '1', label: '1 - Very sleepy and fighting sleep' },
-      { value: '2', label: '2 - Fogginess and slowing down' },
-      { value: '3', label: '3 - Fatigued but not at peak' },
-      { value: '4', label: '4 - Relaxed but not fully alert' },
-      { value: '5', label: '5 - Functioning at high level' },
-      { value: '6', label: '6 - Wide awake and at your peak' },
-    ],
-    questionType: 'select',
-  },
-  {
-    id: 'question4',
-    question: 'Do you have signs of insomnia?',
-    options: [
-      { value: '1', label: '1 - are you unable to fall asleep in 15 minutres or less?' },
-      { value: '2', label: '2 - Do you wake up several times during the night and cannot get back to sleep?' },
-      { value: '3', label: '3 - Do you wake up too early in the morning?' },
-      { value: '4', label: '4 - Do you feel unrefreshed when you wake up?' },
-      { value: '5', label: '5 - Do you feel tired or sleepy during the day, even if you have had enough sleep?' },
-      { value: '6', label: '6 - Do you have trouble concentrating during the day because you are sleepy?' },
-    ],
-    questionType: 'select',
-  },
-  {
-    id: 'question5',
-    question: 'How many hours of sleep do you get on average?',
-    options: [
-      { value: '1', label: '1 - 4 hours' },
-      { value: '2', label: '2 - 5 hours' },
-      { value: '3', label: '3 - 6 hours' },
-      { value: '4', label: '4 - 7 hours' },
-      { value: '5', label: '5 - 8 hours' },
-      { value: '6', label: '6 - 9 hours' },
-    ],
-    questionType: 'select',
-  },
-  {
-    id: 'question6',
-    question: 'How many times do you wake up during the night?',
-    options: [
-      { value: '1', label: '5+ times' },
-      { value: '2', label: '4 times' },
-      { value: '3', label: '3 times' },
-      { value: '4', label: '2 times' },
-      { value: '5', label: '1 times' },
-      { value: '6', label: 'I do not wake up during the night' },
-    ],
-    questionType: 'select',
-  },
-  {
-    id: 'question7',
-    question: 'What habits may affect your sleep?',
-    options: [
-      { value: '1', label: '1 - I drink coffee or tea' },
-      { value: '2', label: '2 - I drink alcohol' },
-      { value: '3', label: '3 - I smoke' },
-      { value: '4', label: '4 - I exercise' },
-      { value: '5', label: '5 - I eat late at night' },
-      { value: '6', label: '6 - I use my phone or computer before bed' },
-    ],
-    questionType: 'multiselect',
-  },
-]
-*/
+
 
 
 //useState: hook to enable 
 const SleepQuestionnaire = () => {
-  const [responses, setResponses] = useState({});
+  // const [responses, setResponses] = useState({});
   const survey = new Model(surveyJson);
-
-  const handleChange = (questionId, value) => {
-    setResponses((prevResponses) => ({
-      ...prevResponses,
-      [questionId]: value,
-    }));
-  };
+  const [addSleep, { error, data }] = useMutation(ADD_SLEEP);
+  // const handleChange = (questionId, value) => {
+  //   setResponses((prevResponses) => ({
+  //     ...prevResponses,
+  //     [questionId]: value,
+  //   }));
+  // };
   //handleChange: function to update responses object with the new value for the question
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Process the form submission with the responses
+  const handleSubmit = useCallback((sender) => {
+    //Process the form submission with the responses
+    console.log(sender.data);
+    // sender.data = {FirstName: 'John', LastName: 'Doe'}
+    // we want [{ name: 'FirstName', value: 'John'}, { name: 'LastName', value: 'Doe' }]
+    let responses = [];
+    Object.keys(sender.data).forEach((responseKey) => {
+      responses.push({ name: responseKey, value: sender.data[responseKey].toString() });
+    });
     console.log(responses);
-  };
+    // addSleep({ 
+    //   variables: { responses: sender.data }, 
+    // });
+  });
   //handleSubmit: function to handle the form submission and data
-
+  survey.onComplete.add(handleSubmit);
   return (
     <div className="form-container">
       <h1>Sleep Questionnaire</h1>
-      <Survey model={survey} />;
+      <Survey model={survey}/>;
 
 
       {/*

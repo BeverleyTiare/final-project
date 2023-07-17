@@ -2,7 +2,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');
-//const { Sleep } = require('../models');
+const { Sleep } = require('../models');
 
 const resolvers = {
   Query: {
@@ -44,22 +44,14 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    /*addSleep: async (parent, args, context) => {
+    addSleep: async (parent, {responses}, context) => {
       if (context.user)
       {
-        const sleep = await Sleep.create({ ...args, username: context.user.username });
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { sleep: sleep._id } },
-          { new: true }
-        );
+        const sleep = await Sleep.create({responses, author: context.user._id, plan:"get more sleep!"});
         return sleep;
       }
       throw new AuthenticationError('You need to be logged in!');
-    },*/
-
-    //update/remove etc??
-
+    },
   },
 };
 

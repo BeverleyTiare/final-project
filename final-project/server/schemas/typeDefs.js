@@ -14,15 +14,21 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+  type Response{
+    name: String
+    value: String
+  }
+
+  input ResponseInput {
+    name: String
+    value: String
+  }
 
   type Sleep {
     _id: ID
-    sleepDate: String
-    sleepTime: String
-    wakeTime: String
-    sleepHours: Int
-    sleepQuality: Int
-    user: User
+    date: String
+    author: User
+    responses: [Response]
   }
   
   type Query {
@@ -32,6 +38,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addSleep(responses: [ResponseInput]!): Sleep
   }
 `;
 

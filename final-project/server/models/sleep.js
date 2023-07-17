@@ -1,39 +1,34 @@
 const {Schema, model} = require('mongoose');
 //const bcrypt = require('bcrypt');
 
-//adapt to sleep survey!!
+
 const sleepSchema = new Schema({
-    sleepText: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-    },
-    sleepDate: {
+    date: {
         type: Date,
         default: Date.now,
     },
-    sleepAuthor: {
+    author: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'User',
+    },
+    plan : {
         type: String,
         required: true,
     },
-    //see client folder: sleep.js questions
-    //how to return respo
-    questions: [
+
+    //how to return response
+    responses: [
         {
-        questionText: {
+        name: {
             type: String,
             required: true,
             minlength: 1,
             maxlength: 280,
         },
-        questionAuthor: {
+        value: {
             type: String,
             required: true,
-        },
-        questionDate: {
-            type: Date,
-            default: Date.now,
         },
     },
     ],
