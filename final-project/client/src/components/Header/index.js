@@ -102,17 +102,36 @@ const Header = () => {
                 
                 <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/sleep">Sleep</Link></li>
                 <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/preventativehealthcare">Preventative Healthcare</Link></li>
-                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/Your plan">Your Plan</Link></li>
+                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/yourplan">Your Plan</Link></li>
               </ul>
             </nav>
           </div>
           <div className="order-2 md:order-3 flex items-center" id="nav-content">
-            <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded" to="/signup">
+          {Auth.loggedIn() ? (
+            <>
+              <Link className="btn btn-lg btn-info m-2" to="/me">
+                {Auth.getProfile().data.username}'s profile
+              </Link>
+              <button className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded ml-4" onClick={logout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded"  to="/login">
+                Login
+              </Link>
+              <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded ml-4" to="/signup">
+                Signup
+              </Link>
+            </>
+          )}
+            {/* <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded" to="/signup">
               Sign Up
             </Link>
             <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded ml-4" to="/login">
               Login
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>

@@ -48,6 +48,7 @@ const resolvers = {
       if (context.user)
       {
         const sleep = await Sleep.create({responses, author: context.user._id, plan:"get more sleep!"});
+        console.log(sleep, "sleep aded")
         return sleep;
       }
       throw new AuthenticationError('You need to be logged in!');

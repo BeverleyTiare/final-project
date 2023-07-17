@@ -123,11 +123,7 @@ const surveyJson = {
       { value: '6', text: '6 -  I use my phone or computer before bed' },
     ],
   },
-  
 ]};
-
-
-
 
 //useState: hook to enable 
 const SleepQuestionnaire = () => {
@@ -147,11 +143,18 @@ const SleepQuestionnaire = () => {
     console.log(sender.data);
     // sender.data = {FirstName: 'John', LastName: 'Doe'}
     // we want [{ name: 'FirstName', value: 'John'}, { name: 'LastName', value: 'Doe' }]
-    let responses = [];
-    Object.keys(sender.data).forEach((responseKey) => {
-      responses.push({ name: responseKey, value: sender.data[responseKey].toString() });
-    });
-    console.log(responses);
+    // let responses = [];
+    // Object.keys(sender.data).forEach((responseKey) => {
+    //   responses.push({ name: responseKey, value: sender.data[responseKey].toString() });
+    // });
+
+    const responses = Object.keys(sender.data).map(label => ({ name: label, value: sender.data[label].toString() }));
+    console.log(responses)
+    if (Auth.loggedIn()) {
+      addSleep({ 
+        variables: { responses: responses }, 
+      });
+    }
     // addSleep({ 
     //   variables: { responses: sender.data }, 
     // });
