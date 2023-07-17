@@ -15,6 +15,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.1",
     "styled-components": "^6.0.3",
+    "survey-core": "^1.9.97",
     "survey-react-ui": "^1.9.97",
     "tailwindcss": "^3.3.2",
     "web-vitals": "^0.2.4"
@@ -22,6 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:watch": "cra-build-watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cra-build-watch": "^3.4.0"
   }
 }
