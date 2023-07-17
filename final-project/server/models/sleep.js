@@ -1,6 +1,7 @@
 const {Schema, model} = require('mongoose');
 //const bcrypt = require('bcrypt');
 
+//adapt to sleep survey!!
 const sleepSchema = new Schema({
     sleepText: {
         type: String,
@@ -16,19 +17,21 @@ const sleepSchema = new Schema({
         type: String,
         required: true,
     },
-    comments: [
+    //see client folder: sleep.js questions
+    //how to return respo
+    questions: [
         {
-        commentText: {
+        questionText: {
             type: String,
             required: true,
             minlength: 1,
             maxlength: 280,
         },
-        commentAuthor: {
+        questionAuthor: {
             type: String,
             required: true,
         },
-        commentDate: {
+        questionDate: {
             type: Date,
             default: Date.now,
         },

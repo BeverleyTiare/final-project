@@ -58,7 +58,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },*/
 
-    //add / remove etc??
+    //update/remove etc??
 
   },
 };

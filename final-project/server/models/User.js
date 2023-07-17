@@ -23,15 +23,6 @@ const userSchema = new Schema({
   }
 });
 
-  /*sleep:[
-{
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-],
-}];*/
-
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {

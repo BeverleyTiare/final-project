@@ -17,7 +17,7 @@ import Footer from './components/Footer';
 import Sleep from './pages/Sleep';
 import Epigenetics from './pages/Epigenetics';
 import PreventativeHealthcare from './pages/PreventativeHealthcare';
-// import Yourplan from './pages/Yourplan';
+import YourPlan from './pages/YourPlan';
 // import SleepData from './pages/SleepData';
 // import Profile from './pages/Profile';
 
@@ -29,9 +29,9 @@ const httpLink = createHttpLink({
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
+const token = localStorage.getItem('id_token');
   // return the headers to the context so httpLink can read them
-  return {
+return {
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : '',
@@ -79,6 +79,10 @@ function App() {
               <Route
                 path="/sleep"
                 element={<Sleep />}
+              /> 
+               <Route
+                path="/yourplan"
+                element={<yourplan />}
               />  
               {/* <Route 
                 path="/me" 

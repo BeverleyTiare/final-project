@@ -1,4 +1,4 @@
-//GRaphHQL here: graphql.org for auth and login
+//GRaphQL here: 
 
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';

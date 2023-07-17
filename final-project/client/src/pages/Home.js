@@ -25,7 +25,7 @@ const Home = () => {
   <BrainImage />
   
   {/* Sleep content */}
-  <div id="sleep" className="container mx-auto mb-5">
+  <div id="sleep" className="container mx-auto mb-25">
     <div className="flex items-center justify-center h-screen">
       <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
         <h1>Sleep</h1>
@@ -36,7 +36,7 @@ const Home = () => {
     </div>
   </div>
   {/* Preventative Healthcare content */}
-  <div id="healthcare" className="container mx-auto mb-5">
+  <div id="healthcare" className="container mx-auto mb-25">
     <div className="flex items-center justify-center h-screen">
       <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
         <h1>Preventative Healthcare</h1>
@@ -46,11 +46,11 @@ const Home = () => {
     </div>
   </div>
   {/* Resources content */}
-  <div id="resources" className="container mx-auto mb-5">
+  <div id="plan" className="container mx-auto mb-25">
     <div className="flex items-center justify-center h-screen">
       <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
         <h1>Your plan</h1>
-        <Link to="/your-plan">ENTER...</Link>
+        <Link to="/yourplan">ENTER...</Link>
       </div>
     </div>
   </div>

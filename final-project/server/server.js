@@ -5,9 +5,6 @@ const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const{ authMiddleware } = require('./utils/auth');
 
-
-// Type definitions and resolvers are imported from the schemas.js file
-const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
 // Listening port
@@ -32,7 +29,8 @@ app.get('/', (req, res) => {
 });
 
 
-// Creates a new instance of an Apollo server with the GraphQL schema
+// #Creates a 'new instance of an Apollo server' with the 'GraphQL schema'
+//Prepare app for incoming requests
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });

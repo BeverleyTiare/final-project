@@ -102,7 +102,7 @@ const Header = () => {
                 
                 <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/sleep">Sleep</Link></li>
                 <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/preventativehealthcare">Preventative Healthcare</Link></li>
-                <li><a className="inline-block no-underline  hover:underline py-2 px-4" href="#Your plan">Your Plan</a></li>
+                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/Your plan">Your Plan</Link></li>
               </ul>
             </nav>
           </div>
