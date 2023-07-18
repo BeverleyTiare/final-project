@@ -2,7 +2,7 @@
 const { gql } = require('apollo-server-express');
 
 // "typeDefs" define the data types and queries for the server. 
-// update to reflect sleep survey ... 
+// The "!" after the data type means that it's required.
 const typeDefs = gql`
   type User {
     _id: ID
@@ -39,6 +39,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addSleep(responses: [ResponseInput]!): Sleep
+    updateSleepPlan(sleepId: ID!, plan: String!): Sleep
   }
 `;
 

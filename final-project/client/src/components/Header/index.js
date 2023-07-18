@@ -68,7 +68,7 @@
 ///////////////////////////// PREV HEADER
 
 
-///////////////////////////// NEW NICE HEADER
+///////////////////////////// NEW  HEADER
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -81,9 +81,6 @@ const Header = () => {
   };
 
   return (
-   
-
-
     <nav style={{color: 'white', position: "sticky", background: "#29072d"}} id="header" className="w-full z-30 top-0 py-1 nav-right">
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
           <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
@@ -99,10 +96,10 @@ const Header = () => {
                 
               <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/">Home</Link></li>
                 <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/epigenetics">Epigenetics</Link></li>
-                
-                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/sleep">Sleep</Link></li>
                 <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/preventativehealthcare">Preventative Healthcare</Link></li>
-                <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/yourplan">Your Plan</Link></li>
+                
+                { Auth.loggedIn() ? <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/sleep">Sleep</Link></li> : null }
+                { Auth.loggedIn() ? <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/yourplan">Your Plan</Link></li> : null }
               </ul>
             </nav>
           </div>
@@ -118,7 +115,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded"  to="/login">
+              <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded"  to="/yourplan">
                 Login
               </Link>
               <Link className="bg-transparent text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded ml-4" to="/signup">

@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/public/index.html'));//added public: RM build
+  res.sendFile(path.join(__dirname, '../client/public/index.html'));//added public
 });
 
 

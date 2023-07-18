@@ -1,4 +1,4 @@
-// Purpose: To create the resolvers for the User model.
+//  create the resolvers for the User model and sleep model.
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');
@@ -53,6 +53,18 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    updateSleepPlan: async (parent, {sleepId, plan}, context) => {
+      if (context.user)
+      {
+        const sleep = await Sleep.findOneAndUpdate(
+          {_id: sleepId},
+          {plan: plan},
+          {new: true}
+        );
+        return sleep;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    }
   },
 };
 

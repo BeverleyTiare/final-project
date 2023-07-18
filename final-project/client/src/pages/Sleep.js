@@ -5,11 +5,18 @@ import 'survey-core/defaultV2.min.css';
 import { Survey, Model } from 'survey-react-ui';
 import { useMutation } from '@apollo/client';
 import { ADD_SLEEP } from '../utils/mutations';
+import Auth from '../utils/auth';
+
+//Video: update! https://vimeo.com/806947756?share=copy
+//<div>
+//<div style={{padding:"91.67% 0 0 0", position: "relative"}}><iframe src="https://player.vimeo.com/video/842391142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position: "absolute", top:0,left:0,width:"100%",height:"100%",}} title="sleep vid"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+//</div>
+
+
 
 
 // Modern theme
  //import 'survey-core/modern.min.css';
-
 const surveyJson = {
   elements: [{
     name: "FirstName",
@@ -55,7 +62,7 @@ const surveyJson = {
       { value: '3', text: '3 - 45-60 minutes' },
       { value: '4', text: '4 - 30-45 minutes' },
       { value: '5', text: '5 - 15-30 minutes' },
-      { value: '6', text: '6 - less than 15 minutes' },
+      { value: '6', text: '6 - Less than 15 minutes' },
     ],
   },
   {
@@ -76,7 +83,7 @@ const surveyJson = {
     title: 'Do you experience any of the following ?',
     type: "checkbox",
     choices: [
-      { value: '1', text: '1 - are you unable to fall asleep in 15 minutres or less?' },
+      { value: '1', text: '1 - Are you unable to fall asleep in 15 minutes or less?' },
       { value: '2', text: '2 - Do you wake up several times during the night and cannot get back to sleep?' },
       { value: '3', text: '3 - Do you wake up too early in the morning?'},
       { value: '4', text: '4 - Do you feel unrefreshed when you wake up?' },
@@ -89,12 +96,12 @@ const surveyJson = {
     title: 'How many hours of sleep do you get on average?',
     type: "radiogroup",
     choices: [
-      { value: '1', text: '1 - 1-4 hours' },
-      { value: '2', text: '2 - 2-5 hours' },
-      { value: '3', text: '3 - 3-6 hours' },
-      { value: '4', text: '4 - 4-7 hours' },
-      { value: '5', text: '5 - 5-8 hours' },
-      { value: '6', text: '6 - 6-9 hours' },
+      { value: '1', text: '1 - Between 1-4 hours' },
+      { value: '2', text: '2 - Between 2-5 hours' },
+      { value: '3', text: '3 - Between 3-6 hours' },
+      { value: '4', text: '4 - Between 4-7 hours' },
+      { value: '5', text: '5 - Between 5-8 hours' },
+      { value: '6', text: '6 - Between 6-9 hours' },
     ],
   },
   {
@@ -106,7 +113,7 @@ const surveyJson = {
       { value: '2', text: '2 - 4 times' },
       { value: '3', text: '3 - 3 times' },
       { value: '4', text: '4 - 2 times' },
-      { value: '5', text: '5 - 1 times' },
+      { value: '5', text: '5 - 1 time only' },
       { value: '6', text: '6 - I do not wake up during the night' },
     ],
   },
@@ -125,10 +132,11 @@ const surveyJson = {
   },
 ]};
 
+const survey = new Model(surveyJson);
+
 //useState: hook to enable 
 const SleepQuestionnaire = () => {
   // const [responses, setResponses] = useState({});
-  const survey = new Model(surveyJson);
   const [addSleep, { error, data }] = useMutation(ADD_SLEEP);
   // const handleChange = (questionId, value) => {
   //   setResponses((prevResponses) => ({
@@ -138,26 +146,23 @@ const SleepQuestionnaire = () => {
   // };
   //handleChange: function to update responses object with the new value for the question
 
-  const handleSubmit = useCallback((sender) => {
+  const handleSubmit = useCallback((sender, options) => {
     //Process the form submission with the responses
     console.log(sender.data);
     // sender.data = {FirstName: 'John', LastName: 'Doe'}
     // we want [{ name: 'FirstName', value: 'John'}, { name: 'LastName', value: 'Doe' }]
-    // let responses = [];
-    // Object.keys(sender.data).forEach((responseKey) => {
-    //   responses.push({ name: responseKey, value: sender.data[responseKey].toString() });
-    // });
+     let responses = [];
+     Object.keys(sender.data).forEach((responseKey) => {
+       responses.push({ name: responseKey, value: sender.data[responseKey].toString() });
+     });
 
-    const responses = Object.keys(sender.data).map(label => ({ name: label, value: sender.data[label].toString() }));
-    console.log(responses)
+    
     if (Auth.loggedIn()) {
       addSleep({ 
-        variables: { responses: responses }, 
+        variables: { responses: responses }, //pass responses to the mutation as an array of objects
       });
+      options.showSaveSuccess();
     }
-    // addSleep({ 
-    //   variables: { responses: sender.data }, 
-    // });
   });
   //handleSubmit: function to handle the form submission and data
   survey.onComplete.add(handleSubmit);

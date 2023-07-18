@@ -27,7 +27,7 @@ export const ADD_USER = gql`
 
 // Sleep data
 export const ADD_SLEEP = gql`
-  mutation addSleep($responses: [Response]!) {
+  mutation addSleep($responses: [ResponseInput]!) {
     addSleep(responses: $responses) {
      _id 
     }

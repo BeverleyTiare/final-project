@@ -8,7 +8,6 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { ChakraProvider } from "@chakra-ui/react"
-
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -21,7 +20,7 @@ import YourPlan from './pages/YourPlan';
 // import SleepData from './pages/SleepData';
 // import Profile from './pages/Profile';
 
-// Construct main GraphQL API 'endpoint' that will connect our ApolloClient instance with the GraphQL API
+// Construct main GraphQL API 'endpoint' that will connect ApolloClient instance with the GraphQL API
 const httpLink = createHttpLink({
   uri: '/graphql',
 });

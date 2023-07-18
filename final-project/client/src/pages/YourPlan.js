@@ -1,14 +1,11 @@
 //create  plan for user: based on sleep questionnaire.
 //link to open api? ai?
 
-
 import React from 'react';
-
+import { useQuery } from '@apollo/client'; // Add this import
+import { Link } from 'react-router-dom'; // Add this import
 import { QUERY_SLEEP_DATA } from '../utils/queries';
-
 import Auth from '../utils/auth';
-
-
 
 const YourPlan = () => {
   const { loading, data } = useQuery(QUERY_SLEEP_DATA);
@@ -42,4 +39,7 @@ const YourPlan = () => {
 };
 
 export default YourPlan;
+
+
+
 
