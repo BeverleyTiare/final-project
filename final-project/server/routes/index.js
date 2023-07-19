@@ -4,7 +4,7 @@ const { authMiddleware } = require('../../utils/auth');
 const { route } = require('./user-routes');
 //const { route } = require('./sleep-routes');
 
-// GET /api/users
+// GET all users
 router.get('/', (req, res) => {
     // Access User model and run.findAll() method)
     User.findAll({

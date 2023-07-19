@@ -4,6 +4,7 @@ const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 const { Sleep } = require('../models');
 
+//resolvers: for Users and Sleeps
 const resolvers = {
   Query: {
     users: async () => {
@@ -19,23 +20,19 @@ const resolvers = {
 
 
   Mutation: {
-    //const user = await User.create(args); creates a new user with the args passed in.
-    //const token = signToken(user); creates a token for the user.
      addUser: async (parent, args) => {
-      const user = await User.create(args);
-      const token = signToken(user);
+      const user = await User.create(args);//creates a new user with the args passed in.
+      const token = signToken(user);//creates a token for the user.
       return { token, user };
     },
   
-    //login checks if the user exists and if the password is correct.
-    //if the user exists and the password is correct, a token is created for the user.
+    //login checks if the user exists and if the password is correct: then token is created.
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
       }
-        //isCorrectPassword is a method in the User model that checks if the password is correct.
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
@@ -47,7 +44,7 @@ const resolvers = {
     addSleep: async (parent, {responses}, context) => {
       if (context.user)
       {
-        const sleep = await Sleep.create({responses, author: context.user._id, plan:"get more sleep!"});
+        const sleep = await Sleep.create({responses, author: context.user._id, plan:"Engage in more sleep and dreams!"});
         console.log(sleep, "sleep aded")
         return sleep;
       }

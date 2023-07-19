@@ -23,11 +23,14 @@ app.use(express.json());
 // Serve up static assets
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-// Routes
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/public/index.html'));//added public
-});
+// express middleware that will intercepts all client requests and if no other route defined, send back the React HTML
+/*app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/public/index.html'));
+});*/
 
+app.get(['/', '/sleep', '/yourplan', '/login', '/signup'],(req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 // #Creates a 'new instance of an Apollo server' with the 'GraphQL schema'
 //Prepare app for incoming requests

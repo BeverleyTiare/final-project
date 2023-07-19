@@ -19,14 +19,13 @@ const Epigenetics = () => {
                 Unlike genetic changes, epigenetic changes are reversible and do not change your DNA sequence, but they can change how your body reads a DNA sequence.
                 <br />
                 <br />
-                <strong>When we look at the link between sleep and the epigenome, although the link is only beginning to be elucidated, clear evidence exists that epigenetic alterations occur following sleep deprivation.</strong>
+                When we look at the link between sleep and the epigenome, recent studies show clear evidence that epigenetic alterations occur following sleep deprivation.
                 <br />
                 <br />
                 <strong>So, what are the effects of poor quality sleep?</strong>
+                <br />
                 Sleep deprivation disrupts the lives of millions of people every day and has a profound impact on the molecular biology of the brain.
-                <br />
-                <br />
-                These effects begin as changes within a neuron, at the DNA and RNA level, and result in alterations in neuronal plasticity and dysregulation of many cognitive functions including - learning and memory.
+                These changes utlimately result in alterations in neuronal plasticity and dysregulation of many cognitive functions including - learning and memory.
                 <br />
                 <br />
                 The epigenome (which modifies the genome) plays a critical role in regulating gene expression in the context of memory storage.
@@ -35,7 +34,7 @@ const Epigenetics = () => {
                 Evidence suggests that sleep loss impacts the epigenome and that these epigenetic alterations might mediate the changes in cognition seen following disruption of sleep.
                 <br />
                 <br />
-                The effects of epigenetic alterations on the regulation of gene expression focus on the most common epigenetic mechanisms:
+                These effects on the regulation of gene expression focus on the most common epigenetic mechanisms:
                 <br />
                 <br />
                 (i) DNA methylation;
@@ -45,7 +44,7 @@ const Epigenetics = () => {
                 This chemical group can be removed through a process called demethylation. Typically, methylation turns genes “off” and demethylation turns genes “on.”
                 <br />
                 <br />
-                (ii) histone modifications; and
+                (ii) Histone modifications;
                 DNA wraps around proteins called histones. When histones are tightly packed together, proteins that ‘read’ the gene cannot access the DNA as easily, so the gene is turned “off.”
                 <br />
                 <br />
@@ -55,7 +54,7 @@ const Epigenetics = () => {
                 Chemical groups can be added or removed from histones to make the histones more tightly or loosely packed, turning genes “off” or “on.”
                 <br />
                 <br />
-                (iii) non-coding RNAs
+                (iii) Non-coding RNAs
                 Your DNA is used as instructions for making coding and non-coding RNA.
                 <br />
                 <br />
@@ -72,6 +71,7 @@ const Epigenetics = () => {
           <div className="w-1/2 p-4 border border-gray-300">
             <p className="my-4 text-white" style={{ textAlign: 'left' }}>
               <strong>So, what do we know about sleep and health?</strong>
+              <br />
               <br />
               Sleep is fundamental to recovery for our brain and body and has tangible and immediate impacts on our mental and physical wellbeing.
               <br />
@@ -93,6 +93,7 @@ const Epigenetics = () => {
               <br />
               Lack of sleep alters immune system responses to viruses and infections, resulting in chronic low-level inflammation, which factors into many medical conditions including heart disease, stroke, diabetes, arthritis, and premature aging.
               <br />
+              <br />
               In regard to cognitive performance, attention concentrating planning, and learning new skills, poor sleep also plays a role.
               <br />
               <br />
@@ -102,7 +103,7 @@ const Epigenetics = () => {
               Sleep is associated also with emotion regulation, coping skills, and decision-making.
             </p>
             <p className="my-4" style={{ textAlign: 'left', color: 'lightblue', paddingBottom: '20%' }}>
-                To learn some evidence-based tips to promote quality sleep, complete our survey and receive your personalized sleep plan!
+                <strong>To learn evidence-based tips to promote quality sleep, complete our survey and receive your personalized sleep plan!</strong>
           </p>
           </div>
         </Container>

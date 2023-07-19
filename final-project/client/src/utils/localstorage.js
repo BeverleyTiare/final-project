@@ -1,4 +1,3 @@
-// localStorage.js
 
 const LOCAL_STORAGE_KEY = 'sleepApp';
 

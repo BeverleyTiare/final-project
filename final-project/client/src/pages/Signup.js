@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';//useState hook and useEffect hook
+//useState and useEffect hooks enable us to manage state in functional components
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -14,8 +15,8 @@ const Signup = () => {
     email: '',
     terms: false,
   });
-
-  const [addUser, { error, data }] = useMutation(ADD_USER);//mutation hook
+//mutation hook 
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -29,15 +30,15 @@ const Signup = () => {
 
   useEffect(() => {
     // $('.ui.form')
-    //   .form({
-    //     fields: {
-    //       name: 'empty',
-    //       username: 'empty',
-    //       password: ['minLength[6]', 'empty'],
-    //       skills: ['minCount[2]', 'empty'],
-    //       terms: 'checked',
-    //     },
-    //   });
+     //  .form({
+     //    fields: {
+     //      name: 'empty',
+      //     username: 'empty',
+      //     password: ['minLength[6]', 'empty'],
+      //     skills: ['minCount[2]', 'empty'],
+      //     terms: 'checked',
+      //   },
+   //    });
   }, []);
 
   const handleFormSubmit = async (event) => {
@@ -61,6 +62,7 @@ const Signup = () => {
 
       console.log(data)
 
+      //Auth login method to log the user in once they have signed up
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);

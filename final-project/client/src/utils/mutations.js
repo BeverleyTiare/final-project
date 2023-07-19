@@ -1,3 +1,5 @@
+//check match with server utils
+
 import { gql } from '@apollo/client';
 
 //Query user data
@@ -13,6 +15,7 @@ export const LOGIN_USER = gql`
   }
 `;
 
+//add user data
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -25,7 +28,7 @@ export const ADD_USER = gql`
   }
 `;
 
-// Sleep data
+// add sleep
 export const ADD_SLEEP = gql`
   mutation addSleep($responses: [ResponseInput]!) {
     addSleep(responses: $responses) {
@@ -33,6 +36,19 @@ export const ADD_SLEEP = gql`
     }
   }
 `;
+
+//update sleep plan
+export const UPDATE_SLEEP_PLAN = gql`
+  mutation updateSleepPlan($sleepId: ID!, $plan: String!) {
+    updateSleepPlan(sleepId: $sleepId, plan: $plan) {
+      _id
+      plan
+    }
+  }
+`;
+
+
+
 
 /*export const ADD_COMMENT = gql`
   mutation addComment(

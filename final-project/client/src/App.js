@@ -7,7 +7,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { ChakraProvider } from "@chakra-ui/react"
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -45,8 +44,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  return (
-    // <ChakraProvider> 
+  return ( 
     <ApolloProvider client={client}>
       <Router>
         <div style={{    minHeight: '100vh',
@@ -102,7 +100,6 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-    // </ChakraProvider>
   );
 }
 

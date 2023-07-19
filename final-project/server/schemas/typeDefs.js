@@ -1,8 +1,7 @@
 //apollo-server-express is a wrapper that allows us to connect Apollo Server to an Express.js application
 const { gql } = require('apollo-server-express');
 
-// "typeDefs" define the data types and queries for the server. 
-// The "!" after the data type means that it's required.
+// "typeDefs" define the data types and queries for the server.The "!" after the data type means that it's required.
 const typeDefs = gql`
   type User {
     _id: ID
@@ -34,7 +33,10 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
+    sleeps: [Sleep]
+    sleep(sleepId: ID!): Sleep
   }
+
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth

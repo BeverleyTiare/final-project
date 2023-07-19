@@ -7,13 +7,14 @@ import Auth from '../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });//state for form data
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data }] = useMutation(LOGIN_USER);//
 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
+    //setFormState: takes the existing formState and spreads it into the new object
     setFormState({
-      ...formState, //spread operator to retain the other key-value pairs in this object
+      ...formState, 
       [name]: value,
     });
   };
