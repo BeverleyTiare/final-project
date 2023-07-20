@@ -10,6 +10,15 @@ const sleepSchema = new Schema({
         required: true,
         ref: 'User',
     },
+    sleepScore: {
+        type: Number,
+        required: true,
+    },
+    sleepCategory: {
+        type: String,
+        required: true,
+    },
+    
     plan : {
         type: String,
         required: true,

@@ -28,6 +28,7 @@ const typeDefs = gql`
     date: String
     author: User
     responses: [Response]
+    sleepScore: Int
   }
   
   type Query {
@@ -41,6 +42,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addSleep(responses: [ResponseInput]!): Sleep
+    addSleepScore(sleepScore: Int!): Sleep //#check
     updateSleepPlan(sleepId: ID!, plan: String!): Sleep
   }
 `;

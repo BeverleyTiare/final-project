@@ -37,6 +37,17 @@ export const ADD_SLEEP = gql`
   }
 `;
 
+//#add sleep score
+export const ADD_SLEEP_SCORE = gql`
+  mutation addSleepScore($sleepScore: Int!) {
+    addSleepScore(sleepScore: $sleepScore) {
+      _id
+      sleepScore
+    }
+  }
+`;
+
+
 //update sleep plan
 export const UPDATE_SLEEP_PLAN = gql`
   mutation updateSleepPlan($sleepId: ID!, $plan: String!) {

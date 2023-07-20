@@ -13,6 +13,8 @@ export const QUERY_USER = gql`
   }
 `;
 
+//sleep score??
+
 // Query sleep data
 export const QUERY_SLEEP_DATA = gql`
   query getSleepData($username: String!) {

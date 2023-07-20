@@ -50,6 +50,19 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    addSleepScore: async (parent, {sleepScore}, context) => {
+      if (context.user)
+      {
+        const sleep = await Sleep.findOneAndUpdate(
+          {_id: context.user._id},
+          {sleepScore: sleepScore},
+          {new: true}
+        );
+        return sleep;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    
     updateSleepPlan: async (parent, {sleepId, plan}, context) => {
       if (context.user)
       {

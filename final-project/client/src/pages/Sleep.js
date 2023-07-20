@@ -7,12 +7,6 @@ import { useMutation } from '@apollo/client';
 import { ADD_SLEEP } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-//Video: update! https://vimeo.com/806947756?share=copy
-//<div>
-//<div style={{padding:"91.67% 0 0 0", position: "relative"}}><iframe src="https://player.vimeo.com/video/842391142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position: "absolute", top:0,left:0,width:"100%",height:"100%",}} title="sleep vid"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-//</div>
-
-
  //import 'survey-core/modern.min.css'; modern theme
 const surveyJson = {
   elements: [{
@@ -24,16 +18,19 @@ const surveyJson = {
     title: "Enter your last name:",
     type: "text"
   }, {
-    name: "SleepHabits",
-    title: "What habits may affect your sleep?",
+    name: "MedicalHistory",
+    title: "What medical condtions may affect your sleep?",
     type: "checkbox",
     choices: [
-      "I drink coffee or tea",
-      "I drink alcohol",
-      "I smoke",
-      "I exercise",
-      "I eat late at night",
-      "I use my phone or computer before bed"
+      "Famiy history of sleep disorders",
+      "History of cardiac and/or respitory problems",
+      "Medical conditions that affect sleep",
+      "Medications that affect sleep",
+      "Weight change in the past year",
+      "Joint pain or arthritis",
+      "Seizures and/or epilepsy", 
+      "History of sleep walking, sleep talking, and /or frequent nightmares", 
+      "Dreamlike images on waking and/or falling asleep",
     ]
   }, 
   {
@@ -115,7 +112,7 @@ const surveyJson = {
     ],
   },
   {
-    name: 'Habits',
+    name: 'Sleep Envrionment Habits',
     title: 'What habits may affect your sleep?',
     type: "checkbox",
     choices: [
@@ -124,15 +121,53 @@ const surveyJson = {
       { value: '3', text: '3 -  I smoke regularly' },
       { value: '4', text: '4 -  I eat late' },
       { value: '5', text: '5 -  I exercise late' },
-      { value: '6', text: '6 -  I use my phone or computer before bed' },
+      { value: '6', text: '6 -  I use my phone or computer before bed'},
+      { value: '7', text: '7 -  I watch TV in bed' },
+      { value: '8', text: '8 -  I have pets in my bedroom' },
+      { value: '9', text: '9 -  I have a regular pattern of awakening and bedtime' },
+    ],
+  },
+  {
+    name: 'Social History',
+    title: 'What social factors may affect your sleep?',
+    type: "checkbox",
+    choices: [
+      { value: '1', text: '1 -  I have a stressful job' },
+      { value: '2', text: '2 -  I have a stressful home life' },
+      { value: '3', text: '3 -  I have a stressful social life' },
+      { value: '4', text: '4 -  I have a stressful financial situation' },
+      { value: '5', text: '5 -  I have a stressful health situation' },
+      { value: '6', text: '6 -  I work night shifts or rotating shifts,including nights' },
     ],
   },
 ]};
 
 const survey = new Model(surveyJson);
+
 const SleepQuestionnaire = () => {
-const [addSleep, { error, data }] = useMutation(ADD_SLEEP);
-  
+  const [addSleep, { error, data }] = useMutation(ADD_SLEEP);
+
+  const calculateSleepScore = (responses) => {
+    // #Calculate the sleep score based on the responses
+    // summing the values of each response to get a sleep score.
+    // design a more complex algorithm ??.
+    const sleepScore = Object.values(responses).reduce(
+      (accumulator, currentValue) => accumulator + parseInt(currentValue),
+      0
+    );
+    return sleepScore;
+  };
+
+  const getSleepCategory = (score) => {
+    // #Categorize the sleep score into three categories
+    if (score >= 0 && score < 30) {
+      return 'Few sleep issues';
+    } else if (score >= 30 && score < 60) {
+      return 'Moderate sleep issues';
+    } else {
+      return 'Significant sleep issues';
+    }
+  };
 
   const handleSubmit = useCallback((sender, options) => {
     console.log(sender.data);
@@ -143,26 +178,34 @@ const [addSleep, { error, data }] = useMutation(ADD_SLEEP);
 
     
     if (Auth.loggedIn()) {
+      // Calculate the sleep score
+      //const sleepScore = calculateSleepScore(responses);
+
+      // Categorize the sleep score
+      //const sleepCategory = getSleepCategory(sleepScore);
       addSleep({ 
-        variables: { responses: responses }, //pass responses to the mutation as an array of objects
+        variables: { 
+        responses: responses,
+        //sleepScore:sleepScore,
+        //sleepCategory: sleepCategory,
+        },
       });
       options.showSaveSuccess();
     }
-  });
+  }, [addSleep]);
+
   //handleSubmit: function to handle the form submission and data
   survey.onComplete.add(handleSubmit);
+
   return (
     <div className="form-container">
-      <h1>Sleep Questionnaire</h1>
+      <h1 className="text-4xl text-white font-bold">Sleep Questionnaire</h1>
       <Survey model={survey}/>;
     </div>
   );
 };
 
-
-
 export default SleepQuestionnaire;
 
 //onChange: event handler to update the responses object with the new value for the question
- 
-//https://aasm.org/resources/medsleep/(harding)questions.pdf
+ //Take a quiz to "update your score" after engaging in your "sleep plan" in four weeks) 

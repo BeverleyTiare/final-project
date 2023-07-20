@@ -48,8 +48,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div style={{    minHeight: '100vh',
-    flexDirection: 'column',
-    display: 'flex'}}>
+        flexDirection: 'column',
+        display: 'flex'}}>
           <Header />
           <div className="container" style={{margin: "0 auto"}}>
             <Routes>
@@ -76,11 +76,15 @@ function App() {
               <Route
                 path="/sleep"
                 element={<Sleep />}
-              /> 
-               <Route
+              />
+              {/*<Route
+                path="/yourscore"
+                element={<YourScore />}
+                /> */}
+               {/*<Route
                 path="/yourplan"
-                element={<yourplan />}
-              />  
+                element={<YourPlan />}
+                />*/}  
               {/* <Route 
                 path="/me" 
                 element={<Profile />}//Profile

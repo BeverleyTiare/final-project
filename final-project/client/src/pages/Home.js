@@ -56,7 +56,7 @@ const Home = () => {
       <div id="plan" className="container mx-auto mb-25">
         <div className="flex items-center justify-center h-screen">
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
-            <h1>Your plan</h1>
+            <h1>Your Plan</h1>
             <Link to="/yourplan">ENTER...</Link>
             <div className="px-8">
               <br/> 
