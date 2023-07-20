@@ -7,11 +7,25 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const YourPlan = () => {
   const { loading, data } = useQuery(QUERY_SLEEP_DATA);
-  const sleep = data?.sleep || [];
+  const sleep = data?.sleeps || [];
+
+  setTimeout(() => {
+    console.log(data)
+  }, 1000);
 
   //return 3 CATS. of Plan : #TODO 
   return (
     <div className="container mx-auto">
+
+      {
+        data ? (
+          <div style={{fontSize: "24px", color: "white"}}>
+            {
+              JSON.stringify(data)
+              }
+          </div>
+        ) : null
+      }
       <header className="text-center py-8">
         <h1 className="text-4xl text-white font-bold">Your Plan</h1>
       </header>

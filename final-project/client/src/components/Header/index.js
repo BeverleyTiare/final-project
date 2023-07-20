@@ -27,7 +27,7 @@ const Header = () => {
               <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/epigenetics">Epigenetics</Link></li>
               <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/preventativehealthcare">Preventative Healthcare</Link></li>
                
-              { Auth.loggedIn() ? <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/sleep">Sleep</Link></li> : null }
+              <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/sleep">Sleep</Link></li> 
               { Auth.loggedIn() ? <li><Link className="inline-block no-underline  hover:underline py-2 px-4" to="/yourplan">Your Plan</Link></li> : null }
               </ul>
             </nav>

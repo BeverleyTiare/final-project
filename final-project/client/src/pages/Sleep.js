@@ -180,14 +180,16 @@ const SleepQuestionnaire = () => {
     if (Auth.loggedIn()) {
       // Calculate the sleep score
       //const sleepScore = calculateSleepScore(responses);
+      const sleepScore = 1;
 
       // Categorize the sleep score
       //const sleepCategory = getSleepCategory(sleepScore);
+      const sleepCategory = 'Few sleep issues';
       addSleep({ 
         variables: { 
         responses: responses,
-        //sleepScore:sleepScore,
-        //sleepCategory: sleepCategory,
+       // sleepScore: sleepScore,
+      //  sleepCategory: sleepCategory,
         },
       });
       options.showSaveSuccess();

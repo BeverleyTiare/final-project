@@ -8,6 +8,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    sleeps: [Sleep]
   }
   type Auth {
     token: ID!
@@ -42,7 +43,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addSleep(responses: [ResponseInput]!): Sleep
-    addSleepScore(sleepScore: Int!): Sleep //#check
+    addSleepScore(sleepScore: Int!): Sleep 
     updateSleepPlan(sleepId: ID!, plan: String!): Sleep
   }
 `;

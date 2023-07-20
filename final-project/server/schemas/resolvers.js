@@ -11,8 +11,24 @@ const resolvers = {
       return User.find();
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username });
+      return User.findOne({ username }).populate('sleeps');
     },
+
+    /*
+    sleeps: async () => {
+      return Sleep.find().sort({ createdAt: -1 });
+    },
+    */
+    sleeps: async (parent, { _id }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id).populate('sleeps');
+        
+        //return user.orders.id(_id); 
+        return user.sleeps
+      }
+
+      throw new AuthenticationError('Not logged in');
+    }
   },
   //sleep: async (parent, { sleepId }) => {
   //  return Sleep.findOne({ _id: sleepId });

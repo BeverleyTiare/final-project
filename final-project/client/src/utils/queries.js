@@ -17,12 +17,15 @@ export const QUERY_USER = gql`
 
 // Query sleep data
 export const QUERY_SLEEP_DATA = gql`
-  query getSleepData($username: String!) {
-    sleepData(username: $username) {
+  query getSleepData {
+    sleeps {
       _id
-      sleepDataText
-      sleepDataAuthor
-      createdAt
+      date
+      responses {
+        name
+        value
+      }
+      
     }
   }
 `;

@@ -81,10 +81,10 @@ function App() {
                 path="/yourscore"
                 element={<YourScore />}
                 /> */}
-               {/*<Route
+               <Route
                 path="/yourplan"
                 element={<YourPlan />}
-                />*/}  
+                />
               {/* <Route 
                 path="/me" 
                 element={<Profile />}//Profile

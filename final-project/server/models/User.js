@@ -20,7 +20,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
-  }
+  },
+  sleeps: [{ type: Schema.Types.ObjectId, ref: 'Sleep' }]
 });
 
 
