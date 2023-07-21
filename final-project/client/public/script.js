@@ -592,8 +592,6 @@ function neuralize() {
 	addClass("ellipse", "animateCircles");
 }
 
-document.querySelector(".brainContainer").addEventListener("click", function(){setColors("dark")});
-
 neuralize();
 setColors("dark");
 

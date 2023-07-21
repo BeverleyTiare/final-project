@@ -19,12 +19,9 @@ const resolvers = {
       return Sleep.find().sort({ createdAt: -1 });
     },
     */
-    sleeps: async (parent, { _id }, context) => {
+    sleep: async (_parent, _params, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate('sleeps');
-        
-        //return user.orders.id(_id); 
-        return user.sleeps
+        return await Sleep.findOne({ author: context.user._id }, {}, { createdAt: 1 });
       }
 
       throw new AuthenticationError('Not logged in');
@@ -57,10 +54,10 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addSleep: async (parent, {responses}, context) => {
+    addSleep: async (parent, {responses, score, plan, category}, context) => {
       if (context.user)
       {
-        const sleep = await Sleep.create({responses, author: context.user._id, plan:"Engage in more sleep and dreams!"});
+        const sleep = await Sleep.create({responses, author: context.user._id, score, plan, category});
         console.log(sleep, "sleep aded")
         return sleep;
       }

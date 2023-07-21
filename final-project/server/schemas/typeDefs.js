@@ -29,20 +29,21 @@ const typeDefs = gql`
     date: String
     author: User
     responses: [Response]
-    sleepScore: Int
+    score: Int
+    category: String
+    plan: [String]
   }
   
   type Query {
     users: [User]
     user(username: String!): User
-    sleeps: [Sleep]
-    sleep(sleepId: ID!): Sleep
+    sleep: Sleep
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addSleep(responses: [ResponseInput]!): Sleep
+    addSleep(responses: [ResponseInput]!, score: Int!, category: String!, plan: [String]!): Sleep
     addSleepScore(sleepScore: Int!): Sleep 
     updateSleepPlan(sleepId: ID!, plan: String!): Sleep
   }

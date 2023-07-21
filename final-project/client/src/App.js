@@ -77,14 +77,15 @@ function App() {
                 path="/sleep"
                 element={<Sleep />}
               />
-              {/*<Route
-                path="/yourscore"
-                element={<YourScore />}
-                /> */}
-               <Route
+              <Route
                 path="/yourplan"
                 element={<YourPlan />}
                 />
+              {/*<Route
+                path="/yourscore"
+                element={<YourScore />}
+                /> *}
+               
               {/* <Route 
                 path="/me" 
                 element={<Profile />}//Profile

@@ -30,8 +30,8 @@ export const ADD_USER = gql`
 
 // add sleep
 export const ADD_SLEEP = gql`
-  mutation addSleep($responses: [ResponseInput]!) {
-    addSleep(responses: $responses) {
+  mutation addSleep($responses: [ResponseInput]!, $score: Int!, $category: String!, $plan: [String]!) {
+    addSleep(responses: $responses, score: $score, category: $category, plan: $plan) {
      _id 
     }
   }
@@ -47,6 +47,15 @@ export const ADD_SLEEP_SCORE = gql`
   }
 `;
 
+//#add sleep category
+export const ADD_SLEEP_CATEGORY = gql`
+  mutation addSleepCategory($sleepCategory: String!) {
+    addSleepCategory(sleepCategory: $sleepCategory) {
+      _id
+      sleepCategory
+    }
+  }
+`;
 
 //update sleep plan
 export const UPDATE_SLEEP_PLAN = gql`

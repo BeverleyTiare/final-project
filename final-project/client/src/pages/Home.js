@@ -1,3 +1,5 @@
+//https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8150507/
+//msg re survey- take our sleep survey to get a personalized sleep plan
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BrainImage from '../components/BrainImage';
@@ -9,11 +11,14 @@ const Home = () => {
       <div id="epigenetics" className="container mx-auto mb-25">
         <div className="flex items-center justify-center h-screen">
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
-            <h1>Epigenetics</h1>
+            <h1>Epigenetics & Sleep</h1>
             <p>"Epigenetics is a field of study focused on changes in DNA that do not involve alterations to the underlying DNA sequence</p>
             <p>The DNA letters and the proteins that interact with DNA can have chemical modifications that change the degrees to which genes are turned on and off</p>
             <p>Certain epigenetic modifications may be passed on from parent cell to daughter cell during cell division or from one generation to the next"</p>
             <p>(National Human Genome Research Institute)</p>
+            <br/>
+            <br/>
+            <p> Take our sleep survey to get a personalized Sleep Plan...</p>
             <br/>
             <Link to="/epigenetics">ENTER...</Link>
           </div>
@@ -26,8 +31,8 @@ const Home = () => {
         <div className="flex items-center justify-center h-screen">
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
             <h1>Sleep</h1>
-            <p>Explore Sleep Research</p>
-            <p>Build Your Sleep Data</p>
+            <p>Sleep is the foundation of physical health, mental health and human performance in all settings</p>
+            <p>Sleep is also central to our cognitive function, immunity, wound healing, longevity and so much more</p>
             <Link to="/SleepData">ENTER...</Link>
             <div className="px-8">
             <br/>
@@ -42,8 +47,8 @@ const Home = () => {
         <div className="flex items-center justify-center h-screen">
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
             <h1>Preventative Healthcare</h1>
-            <p>Optimizing Your Wellness</p>
-            <Link to="/healthcare">ENTER...</Link>
+            <p>Primary prevention refers to actions aimed at avoiding the manifestation of a disease through implementation of systemic resources and services </p>
+            <p>Secondary prevention deals with early detection when this improves the chances for positive health outcomes</p><Link to="/healthcare">ENTER...</Link>
             <div className="px-8">
               <br/>
               <img src='./assets/Health.png' alt="nature image" />
@@ -57,6 +62,7 @@ const Home = () => {
         <div className="flex items-center justify-center h-screen">
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
             <h1>Your Plan</h1>
+            <p>Optimizie your wellness through exploring sleep and implementing sleep strategies</p>
             <Link to="/yourplan">ENTER...</Link>
             <div className="px-8">
               <br/> 

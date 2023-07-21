@@ -7,13 +7,28 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const YourPlan = () => {
   const { loading, data } = useQuery(QUERY_SLEEP_DATA);
-  const sleep = data?.sleeps || [];
+  const sleep = data?.sleep?.plan || [];
 
-  setTimeout(() => {
-    console.log(data)
-  }, 1000);
+  /*return (
+    <div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        sleep.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))
+      )}
+    </div>
+  );
+};
 
-  //return 3 CATS. of Plan : #TODO 
+export default YourPlan;*/
+  
+//TODO
+  // when clicking "Update Notes"
+  // run `newNotes = prompt('What should the notes be?', data.sleep.notes)`
+  // updateSleepNotes(data.sleep._id, newNotes)
+
   return (
     <div className="container mx-auto">
 
@@ -21,7 +36,7 @@ const YourPlan = () => {
         data ? (
           <div style={{fontSize: "24px", color: "white"}}>
             {
-              JSON.stringify(data)
+              JSON.stringify(sleep)
               }
           </div>
         ) : null
@@ -52,10 +67,13 @@ const YourPlan = () => {
                     <strong>There are, however, some strategies to assist in getting to sleep and improving sleep quality: </strong>
                     <br />
                     <br />
+                    - View bright sunlight outdoors within 30-60 minutes of waking to stimulate optimal circadian rythms.
+                    <br />
+                    <br />
                     - Consistent sleep schedules: aim to go to bed and get up at the same time every day, including weekends and when traveling. 
                     <br />
                     <br />
-                    - A calm ritual before bedtime: taking a hot shower or bath, yoga postures for sleep, soothing music, meditation, and dim lighting
+                      A calm ritual before bedtime: taking a hot shower or bath, yoga postures for sleep, soothing music, meditation, and dim lighting
                       all help to prepare the body and mind for sleep as well as reduce anxiety and stress.
                     <br />
                     <br />
@@ -106,6 +124,11 @@ const YourPlan = () => {
 };
 
 export default YourPlan;
+
+
+
+//Falling Back Asleep: Reveri App, NSDR, Yoga Nidra
+//Sleep Supplements: Magnesium Threonate, Apigenin & Theanine
 
 //Video: update! https://vimeo.com/806947756?share=copy
 //<div>
