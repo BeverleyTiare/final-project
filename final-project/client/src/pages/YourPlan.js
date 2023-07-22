@@ -9,52 +9,53 @@ const YourPlan = () => {
   const { loading, data } = useQuery(QUERY_SLEEP_DATA);
   const sleep = data?.sleep?.plan || [];
 
-  /*return (
-    <div>
+  return (
+    <div className="container mx-auto" style={{ textAlign: 'center', color: 'white', border: '1px solid #ccc', padding: '10px', marginTop: '40px' }}>
+      <h2>Your Plan</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        sleep.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))
+        <div>
+          {sleep.map((item, index) => (
+            <p key={index}>{item}</p>
+          ))}
+        </div>
       )}
+      {/*<div style={{ fontSize: "20px", color: "white" }}>
+        {JSON.stringify(sleep)}
+          </div>*/}
+      {/* video component here */}
+      <br />
+      <br />
+      <video controls>
+        <source src="path/to/your/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };
 
-export default YourPlan;*/
+export default YourPlan;
+
+//https://vimeo.com/806947756?share=copy
   
-//TODO
-  // when clicking "Update Notes"
-  // run `newNotes = prompt('What should the notes be?', data.sleep.notes)`
-  // updateSleepNotes(data.sleep._id, newNotes)
+     
+  
+      {/*<header className="text-center py-8">
+       <h1 className="text-4xl text-white font-bold">Your Plan</h1>
+     </header>
+     <div className="px-8">
+       <img src="assets/Plan.png" alt="hikers" />
+       <Container className="yourplan-section text-white" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+         <Container>
+           {Auth.loggedIn() ? (
+             loading ? (
+               <div>Loading...</div>
+             ) : (
 
-  return (
-    <div className="container mx-auto">
-
-      {
-        data ? (
-          <div style={{fontSize: "24px", color: "white"}}>
-            {
-              JSON.stringify(sleep)
-              }
-          </div>
-        ) : null
-      }
-      <header className="text-center py-8">
-        <h1 className="text-4xl text-white font-bold">Your Plan</h1>
-      </header>
-      <div className="px-8">
-        <img src="assets/Plan.png" alt="hikers" />
-        <Container className="yourplan-section text-white" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <Container>
-            {Auth.loggedIn() ? (
-              loading ? (
-                <div>Loading...</div>
-              ) : (
                 <Row style={{ justifyContent: "center", padding: "10px" }}>
                   <Col md={7} style={{ justifyContent: "center", paddingTop: "30px", paddingBottom: "50px", textAlign: "left" }}>
-                    <strong>What are some ways to promote sleep?</strong>
+                    <strong>What are some further ways to promote sleep?</strong>
                     <br />
                     <br /> 
                     Between 18-64 years, we need 7-9 hours of sleep per night.
@@ -126,17 +127,19 @@ export default YourPlan;*/
 export default YourPlan;
 
 
+//TODO
+  // when clicking "Update Notes"
+  // run `newNotes = prompt('What should the notes be?', data.sleep.notes)`
+  // updateSleepNotes(data.sleep._id, newNotes)
 
-//Falling Back Asleep: Reveri App, NSDR, Yoga Nidra
-//Sleep Supplements: Magnesium Threonate, Apigenin & Theanine
 
 //Video: update! https://vimeo.com/806947756?share=copy
 //<div>
 //<div style={{padding:"91.67% 0 0 0", position: "relative"}}><iframe src="https://player.vimeo.com/video/842391142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position: "absolute", top:0,left:0,width:"100%",height:"100%",}} title="sleep vid"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 //</div>
 
-
-/*return (
+//PREV CODE
+return (
   <div className="container mx-auto">
     <div className="px-8">
     {Auth.loggedIn() ? (
@@ -157,4 +160,4 @@ export default YourPlan;
     </div>
   </div>
 );
-};*/
+};*/}

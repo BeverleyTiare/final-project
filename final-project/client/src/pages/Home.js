@@ -18,9 +18,11 @@ const Home = () => {
             <p>(National Human Genome Research Institute)</p>
             <br/>
             <br/>
-            <p> Take our sleep survey to get a personalized Sleep Plan...</p>
+            <p className="my-4" style={{ textAlign: 'left', color: 'lightblue', paddingBottom: '20%' }}>
+            <strong>COMPLETE OUR SLEEP SURVEY TO RECEIVE YOUR PERSONALIZED SLEEP PLAN...JUST SIGN UP TO BEGIN</strong>
+            </p>
             <br/>
-            <Link to="/epigenetics">ENTER...</Link>
+            <Link to="/epigenetics">ENTER EPIGENETICS AND SLEEP...</Link>
           </div>
         </div>
       </div>
@@ -33,7 +35,7 @@ const Home = () => {
             <h1>Sleep</h1>
             <p>Sleep is the foundation of physical health, mental health and human performance in all settings</p>
             <p>Sleep is also central to our cognitive function, immunity, wound healing, longevity and so much more</p>
-            <Link to="/SleepData">ENTER...</Link>
+            <Link to="/SleepData">ENTER SLEEP...</Link>
             <div className="px-8">
             <br/>
               <img src='./assets/sleep.png' alt="sleep image" />
@@ -48,7 +50,8 @@ const Home = () => {
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
             <h1>Preventative Healthcare</h1>
             <p>Primary prevention refers to actions aimed at avoiding the manifestation of a disease through implementation of systemic resources and services </p>
-            <p>Secondary prevention deals with early detection when this improves the chances for positive health outcomes</p><Link to="/healthcare">ENTER...</Link>
+            <p>Secondary prevention deals with early detection when this improves the chances for positive health outcomes</p>
+            <Link to="/healthcare">ENTER PREVENTATIVE HEALTHCARE..</Link>
             <div className="px-8">
               <br/>
               <img src='./assets/Health.png' alt="nature image" />
@@ -63,7 +66,7 @@ const Home = () => {
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">
             <h1>Your Plan</h1>
             <p>Optimizie your wellness through exploring sleep and implementing sleep strategies</p>
-            <Link to="/yourplan">ENTER...</Link>
+            {/*<Link to="/yourplan">ENTER</Link>*/}
             <div className="px-8">
               <br/> 
               <img src='./assets/Plan.png' alt="snow hikers image" />

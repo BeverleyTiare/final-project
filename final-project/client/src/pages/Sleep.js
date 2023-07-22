@@ -8,6 +8,7 @@ import { ADD_SLEEP } from '../utils/mutations';
 import Auth from '../utils/auth';
 
  //import 'survey-core/modern.min.css'; modern theme
+ //survey questions
 const surveyJson = {
   elements: [
     {
@@ -145,6 +146,7 @@ const surveyJson = {
 ],
 };
 
+//sleep survey calculations
 const survey = new Model(surveyJson);
 
 const SleepQuestionnaire = () => {
@@ -210,6 +212,7 @@ const SleepQuestionnaire = () => {
     return sleepScore;
   };
 
+  //sleep score categories
   const getSleepCategory = (score) => {
     if (score === 0) {
       return 'Few sleep issues';
@@ -248,22 +251,12 @@ const SleepQuestionnaire = () => {
     }
   };
 
-  /*const handleSubmit = useCallback((sender, options) => {
-    console.log(sender.data);
-     */
-
+ 
      const handleSubmit = useCallback((sender, options) => {
       let responses = [];
       Object.keys(sender.data).forEach((responseKey) => {
         responses.push({ name: responseKey, value: sender.data[responseKey].toString() });
       });
-
-
-
-    /*if (Auth.loggedIn()) {
-      // Calculate the sleep score
-      //const sleepScore = calculateSleepScore(responses);
-      const sleepScore = 1;*/
 
       if (Auth.loggedIn()) {
         // Calculate the sleep score, categorize and create plan
