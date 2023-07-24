@@ -287,10 +287,20 @@ const SleepQuestionnaire = () => {
   survey.onComplete.add(handleSubmit);
 
   return (
-    <div className="form-container">
-      <h1 className="text-4xl text-white font-bold">Sleep Questionnaire</h1>
-      <Survey model={survey} />;
-    </div>
+    
+      Auth.loggedIn() ? 
+        (
+          <div className="form-container" style={{background : "#29072d"}}>
+            <h1 className="text-4xl text-white font-bold">Sleep Questionnaire</h1>
+            <Survey model={survey} />;
+          </div>
+        ) 
+        :
+        (
+          <div className="flex-row justify-center mb-3 text-white">
+            <p className="mx-2 p-2">You need to be logged in to take the survey.</p>
+          </div>
+        )
   );
 };
 

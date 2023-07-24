@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Epigenetics = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto" style={{background : "#29072d"}}>
       <header className="text-center py-8">
         <h1 className="text-4xl text-white font-bold">Epigenetics and sleep</h1>
       </header>

@@ -49,7 +49,8 @@ function App() {
       <Router>
         <div style={{    minHeight: '100vh',
         flexDirection: 'column',
-        display: 'flex'}}>
+        display: 'flex',
+        }}>
           <Header />
           <div className="container" style={{margin: "0 auto"}}>
             <Routes>

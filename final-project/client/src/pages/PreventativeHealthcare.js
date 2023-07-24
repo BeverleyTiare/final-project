@@ -2,7 +2,7 @@ import React from 'react';
 
 const PreventativeHealthcare = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto" style={{background : "#29072d"}}>
       <header className="text-center py-8">
         <h1 className="text-4xl text-white font-bold" style={{ textAlign: 'centre' }}>The Brain and Neuroplasticity</h1>
       </header>

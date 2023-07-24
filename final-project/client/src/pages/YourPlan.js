@@ -20,10 +20,11 @@ const sleep = data?.sleep || {};
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
-              color: "rgb(16, 25, 38)",
+              color: "#e9e9e9",
+
               fontWeight: 300,
               fontSize: "24px",
-              textAlign: "left",
+              
             }}
           >
             Do what is best for your health with your personalized
@@ -32,10 +33,11 @@ const sleep = data?.sleep || {};
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
-              color: "rgb(16, 25, 38)",
+              color: "#e9e9e9",
+
               fontWeight: 300,
               fontSize: "24px",
-              textAlign: "left",
+              
             }}
           >
             Better health, brighter moods, more energy — it all starts with
@@ -43,31 +45,32 @@ const sleep = data?.sleep || {};
           </h2>,
           <div
             style={{
-              textAlign: "right",
-              fontSize: "16px",
+              fontSize: "18px",
+              marginTop: "60px",
+              fontWeight: "600"
             }}
           >
-            <strong>
+            <p>
               Get morning light, as sunlight is the main controller of the
               natural body clock. Natural sunlight is best, even on cloudy days.
               Try to step outside for at least 20 minutes within 1 hour of
               waking.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Practice relaxation techniques before bedtime, such as deep
               breathing, meditation, yoga, or tai chi.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Establish a consistent sleep schedule by going to bed and waking
               up at the same time every day, including weekends.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Limit caffeine and alcohol intake, especially in the afternoon and
               evening.
-            </strong>
+            </p>
           </div>,
         ];
       case "Moderate sleep issues":
@@ -75,10 +78,11 @@ const sleep = data?.sleep || {};
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
-              color: "rgb(16, 25, 38)",
+              color: "#e9e9e9",
+
               fontWeight: 300,
               fontSize: "24px",
-              textAlign: "left",
+              
             }}
           >
             Do what is best for your health with your personalized
@@ -87,10 +91,11 @@ const sleep = data?.sleep || {};
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
-              color: "rgb(16, 25, 38)",
+              color: "#e9e9e9",
+
               fontWeight: 300,
               fontSize: "24px",
-              textAlign: "left",
+              
             }}
           >
             Better health, brighter moods, more energy — it all starts with
@@ -98,39 +103,40 @@ const sleep = data?.sleep || {};
           </h2>,
           <div
             style={{
-              textAlign: "right",
-              fontSize: "16px",
+              textAlign: "left",
+              fontSize: "18px",
+              marginTop: "60px",
             }}
           >
-            <strong>
+            <p>
               Get morning light, as sunlight is the main controller of the
               natural body clock. Natural sunlight is best, even on cloudy days.
               Try to step outside for at least 20 minutes within 1 hour of
               waking.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Set a consistent bedtime. There are certain times at night that
               your body will be able to sleep better than others. If you feel
               sleepy but your brain is busy thinking, it can't shut off and go
               to sleep. Try write down the things that concern you to review and
               attend to the following day.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Create a calm ritual before bedtime, such as taking a hot shower
               or bath, yoga postures for sleep, soothing music, meditation, to
               assist in preparing for sleep.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Keep your bedroom cool, quiet, and dark to promote better sleep.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Avoid heavy meals, alcohol, and vigorous exercise close to
               bedtime.
-            </strong>
+            </p>
           </div>,
         ];
 
@@ -139,10 +145,11 @@ const sleep = data?.sleep || {};
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
-              color: "rgb(16, 25, 38)",
+              color: "#e9e9e9",
+
               fontWeight: 300,
               fontSize: "24px",
-              textAlign: "left",
+              
             }}
           >
             Do what is best for your health with your personalized
@@ -151,10 +158,11 @@ const sleep = data?.sleep || {};
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
-              color: "rgb(16, 25, 38)",
+              color: "#e9e9e9",
+
               fontWeight: 300,
               fontSize: "24px",
-              textAlign: "left",
+              
             }}
           >
             Better health, brighter moods, more energy — it all starts with
@@ -162,63 +170,64 @@ const sleep = data?.sleep || {};
           </h2>,
           <div
             style={{
-              textAlign: "right",
-              fontSize: "16px",
+              textAlign: "left",
+              fontSize: "18px",
+              marginTop: "60px",
             }}
           >
-            <strong>
+            <p>
               Consider seeking help from a sleep specialist to address
               underlying sleep disorders.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Get morning light, as sunlight is the main controller of the
               natural body clock. Natural sunlight is best,even on cloudy days.
               Try to step outside for at least 20 minutes within 1 hour of
               waking.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Set a consistent bedtime. There are certain times at night that
               your body will be able to sleep better than others. If you feel
               sleepy but your brain is busy thinking, it can't shut off and go
               to sleep. Try write down the things that concern you to review and
               attend to the following day.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Create a comfortable sleep environment, a place that is cool,
               dark, and quiet.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Prepare yourself for sleep before bed, by committing to some
               relaxation techniques, such as slow breathing or yoga
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Limit screen time before bed and limit watching TV whilst in bed.
               Mobile phones and all electronic devices make it harder for your
               brain to turn off, and even dim light from devices may delay the
               release of the hormone melatonin, interfering with your body
               clock.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Engage in regular physical activity during the day to promote
               better gnerael health, as well as sleep at night.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               If you cannot fall asleep in 15-20 minutes, get out of bed and do
               a quiet activity — read a book, or journal with dim lighting until
               you feel drowsy, then return to bed.
-            </strong>
+            </p>
             <br />
-            <strong>
+            <p>
               Try to avoid day naps, or limit them to 20 minutes in the early
               afternoon.
-            </strong>
+            </p>
           </div>,
         ];
       default:
@@ -245,35 +254,37 @@ const sleep = data?.sleep || {};
         border: "1px solid #ccc",
         padding: "20px",
         marginTop: "40px",
+        background : "#29072d"
+
       }}
     >
-      <h2>Your Plan</h2>
+      <h2 style={{marginTop: "20px"}}>Your Plan</h2>
       {loading ? (
         <p>Loading...</p>
-      ) : (
-        <>
-        <div>
-          {generateSleepPlan(sleep.category)}
-        </div>
-        <div>
-          <h2>Notes</h2>
-          <textarea rows="4" cols="50" name="notes" value={sleep.notes} ref={notesRef} />
-          <button onClick={onSaveNotes}>Save</button> 
-        </div>
-        </>
+      ) : 
+        
+        sleep.category ?
+        ( <>
+          <div style={{padding: "26px"}}>
+            {generateSleepPlan(sleep.category)}
+          </div>
+          <div>
+            <h2>Notes</h2>
+            <textarea style={{backgroundColor: "#e9e9e9", color: "black", padding: "8px", fontSize: "18px", borderRadius: "7px"}} rows="4" cols="50" name="notes" value={sleep.notes} ref={notesRef} />
+            <br />
+            <button class="bg-transparent mt-4 text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded ml-4" onClick={onSaveNotes}>Save</button> 
+          </div>
+          </>) 
+        : 
+        (<>
+          <h2>Take the Sleep Quiz to get your personalized sleep plan!</h2>
+        </>)
+        
+      }
+       
 
-      )}
+      
 
-    
-      {/* video component here */}
-      <br />
-      <br />
-      <div>
-        <video width="320" height="240" controls>
-          <source src="assets/Sleepvid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
     </div>
 
   );
@@ -297,8 +308,8 @@ export default YourPlan;
              ) : (
 
                 <Row style={{ justifyContent: "center", padding: "10px" }}>
-                  <Col md={7} style={{ justifyContent: "center", paddingTop: "30px", paddingBottom: "50px", textAlign: "left" }}>
-                    <strong>What are some further ways to promote sleep?</strong>
+                  <Col md={7} style={{ justifyContent: "center", paddingTop: "30px", paddingBottom: "50px", }}>
+                    <p>What are some further ways to promote sleep?</p>
                     <br />
                     <br /> 
                     Between 18-64 years, we need 7-9 hours of sleep per night.
@@ -308,7 +319,7 @@ export default YourPlan;
                     Stress, caffeine, nicotine, and alcohol can contribute to sleep issues*.
                     <br />
                     <br />  
-                    <strong>There are, however, some strategies to assist in getting to sleep and improving sleep quality: </strong>
+                    <p>There are, however, some strategies to assist in getting to sleep and improving sleep quality: </p>
                     <br />
                     <br />
                     - View bright sunlight outdoors within 30-60 minutes of waking to stimulate optimal circadian rythms.
@@ -346,7 +357,7 @@ export default YourPlan;
                     <br /> 
                     <br /> 
                     <p className="my-4" style={{ textAlign: 'left', color: 'lightblue', paddingBottom: '10%' }}>
-                    <strong>Please Note: if sleep deprivation is impacting your daytime functioning for more than two weeks, it is important to speak with your GP or another medical professional</strong>
+                    <p>Please Note: if sleep deprivation is impacting your daytime functioning for more than two weeks, it is important to speak with your GP or another medical professional</p>
                     </p>
                     <p className="my-4" style={{ textAlign: 'left', color: 'lightblue', paddingBottom: '20%' }}>
                     For more information on sleep, please visit the following websites:https://aasm.org/ https://aasm.org/,https://www.verizon.com/about/blog/tips-for-better-sleep/,https://www.sleepfoundation.org/
