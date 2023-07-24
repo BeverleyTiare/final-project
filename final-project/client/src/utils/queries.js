@@ -20,7 +20,8 @@ export const QUERY_SLEEP_DATA = gql`
   query Sleep {
     sleep {
       _id
-      plan
+      category
+      notes
     }
   }
 `;

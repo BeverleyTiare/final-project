@@ -31,7 +31,7 @@ const typeDefs = gql`
     responses: [Response]
     score: Int
     category: String
-    plan: [String]
+    notes: String
   }
   
   type Query {
@@ -43,9 +43,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addSleep(responses: [ResponseInput]!, score: Int!, category: String!, plan: [String]!): Sleep
-    addSleepScore(sleepScore: Int!): Sleep 
-    updateSleepPlan(sleepId: ID!, plan: String!): Sleep
+    addSleep(responses: [ResponseInput]!, score: Int!, category: String!): Sleep
+    updateSleepNotes(sleepId: ID!, notes: String!): Sleep 
   }
 `;
 
@@ -53,3 +52,4 @@ module.exports = typeDefs;
 
 //Mutations are used to modify data; enables us to create, update, and delete data
 
+//  updateSleepPlan(sleepId: ID!, plan: String!): Sleep

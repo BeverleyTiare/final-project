@@ -9,7 +9,10 @@ const PreventativeHealthcare = () => {
       <div className="px-8">
       <img src="./assets/Health.png" alt="nature scene" />
         <p className="my-4 text-white" style={{ textAlign: 'left', paddingRight: '20%' }}>
-        <strong>Neuroplasticity is the ability of the brain to change in response to experiences: this experience-driven change occurs in both neural structure and function.</strong> 
+        <strong>Brain Health is a critical piece of your overall health. It underlies your ability to move, communicate, make decisions, problem solve and live a productive meaningful life. Because the brain controls so much of our daily function, it is arguably the most singular important part of human function and behaviour</strong>
+        <br/>
+        <br/>
+        Neuroplasticity is the ability of the brain to change in response to experiences: this experience-driven change occurs in both neural structure and function. 
         <br /> 
         <br /> 
         In early development our brain is agile, and the adaption of our nervous system is specific to our individual bodies, culture and surroundings. 
@@ -34,10 +37,8 @@ const PreventativeHealthcare = () => {
         </p>
         <a href="https://www.americanbrainfoundation.org/why-sleep-matters-for-brain-health/">Learn more</a>
         <p className="my-4 text-white" style={{ textAlign: 'left', paddingRight: '20%' }}>
-        <strong>Our brain is the powerhouse of regulating function, interpretating sensory information, emotion processing, and the foundation of intelligence, memory and creativity.</strong> 
-        <br /> 
-        <br /> 
-        It is the most complex organ of the body and is constantly active, even in sleep. 
+        <strong> Our brain is the powerhouse of regulating function, interpretating sensory information, emotion processing, and the foundation of intelligence, memory and creativity.</strong>  
+        <i>And the brain is constantly active, even when we sleep. </i>
         <br /> 
         <br />
         Although genetics establishes the foundations of our cognitive health and building our cognitive reserve, we can improve brain health & cognitive health (a domain of brain health) 
@@ -62,5 +63,5 @@ const PreventativeHealthcare = () => {
 
 export default PreventativeHealthcare;
 
-//https://www.frontiersin.org/articles/10.3389/fncel.2019.00066/full
+//add in Further health questions visit: https://www.mayoclinic.org/diseases-conditions
 

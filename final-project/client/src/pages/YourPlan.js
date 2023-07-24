@@ -1,47 +1,290 @@
-import React from 'react';
-import { useQuery } from '@apollo/client'; 
-import { Link } from 'react-router-dom'; 
-import { QUERY_SLEEP_DATA } from '../utils/queries'; // import our query
-import Auth from '../utils/auth';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from "react";
+import { useQuery, useMutation } from "@apollo/client";
+import { Link } from "react-router-dom";
+import { QUERY_SLEEP_DATA } from "../utils/queries"; // import our query
+import Auth from "../utils/auth";
+import { Container, Row, Col } from "react-bootstrap";
+import { UPDATE_SLEEP_NOTES } from "../utils/mutations";
 
 const YourPlan = () => {
-  const { loading, data } = useQuery(QUERY_SLEEP_DATA);
-  const sleep = data?.sleep?.plan || [];
+const { loading, data } = useQuery(QUERY_SLEEP_DATA);
+const [updateSleepNotes, { error, updateData }] = useMutation(UPDATE_SLEEP_NOTES);
+const notesRef = React.useRef();
+const sleep = data?.sleep || {};
+
+  //function to generate sleep plans based on the sleep category
+  const generateSleepPlan = (category) => {
+    switch (category) {
+      case "Few sleep issues":
+        return [
+          <h2
+            className="Typography_typography-h2 _nV2DM"
+            style={{
+              color: "rgb(16, 25, 38)",
+              fontWeight: 300,
+              fontSize: "24px",
+              textAlign: "left",
+            }}
+          >
+            Do what is best for your health with your personalized
+            research-based sleep tips!
+          </h2>,
+          <h2
+            className="Typography_typography-h2 _nV2DM"
+            style={{
+              color: "rgb(16, 25, 38)",
+              fontWeight: 300,
+              fontSize: "24px",
+              textAlign: "left",
+            }}
+          >
+            Better health, brighter moods, more energy — it all starts with
+            sleep
+          </h2>,
+          <div
+            style={{
+              textAlign: "right",
+              fontSize: "16px",
+            }}
+          >
+            <strong>
+              Get morning light, as sunlight is the main controller of the
+              natural body clock. Natural sunlight is best, even on cloudy days.
+              Try to step outside for at least 20 minutes within 1 hour of
+              waking.
+            </strong>
+            <br />
+            <strong>
+              Practice relaxation techniques before bedtime, such as deep
+              breathing, meditation, yoga, or tai chi.
+            </strong>
+            <br />
+            <strong>
+              Establish a consistent sleep schedule by going to bed and waking
+              up at the same time every day, including weekends.
+            </strong>
+            <br />
+            <strong>
+              Limit caffeine and alcohol intake, especially in the afternoon and
+              evening.
+            </strong>
+          </div>,
+        ];
+      case "Moderate sleep issues":
+        return [
+          <h2
+            className="Typography_typography-h2 _nV2DM"
+            style={{
+              color: "rgb(16, 25, 38)",
+              fontWeight: 300,
+              fontSize: "24px",
+              textAlign: "left",
+            }}
+          >
+            Do what is best for your health with your personalized
+            research-based sleep tips!
+          </h2>,
+          <h2
+            className="Typography_typography-h2 _nV2DM"
+            style={{
+              color: "rgb(16, 25, 38)",
+              fontWeight: 300,
+              fontSize: "24px",
+              textAlign: "left",
+            }}
+          >
+            Better health, brighter moods, more energy — it all starts with
+            sleep
+          </h2>,
+          <div
+            style={{
+              textAlign: "right",
+              fontSize: "16px",
+            }}
+          >
+            <strong>
+              Get morning light, as sunlight is the main controller of the
+              natural body clock. Natural sunlight is best, even on cloudy days.
+              Try to step outside for at least 20 minutes within 1 hour of
+              waking.
+            </strong>
+            <br />
+            <strong>
+              Set a consistent bedtime. There are certain times at night that
+              your body will be able to sleep better than others. If you feel
+              sleepy but your brain is busy thinking, it can't shut off and go
+              to sleep. Try write down the things that concern you to review and
+              attend to the following day.
+            </strong>
+            <br />
+            <strong>
+              Create a calm ritual before bedtime, such as taking a hot shower
+              or bath, yoga postures for sleep, soothing music, meditation, to
+              assist in preparing for sleep.
+            </strong>
+            <br />
+            <strong>
+              Keep your bedroom cool, quiet, and dark to promote better sleep.
+            </strong>
+            <br />
+            <strong>
+              Avoid heavy meals, alcohol, and vigorous exercise close to
+              bedtime.
+            </strong>
+          </div>,
+        ];
+
+      case "Significant sleep issues":
+        return [
+          <h2
+            className="Typography_typography-h2 _nV2DM"
+            style={{
+              color: "rgb(16, 25, 38)",
+              fontWeight: 300,
+              fontSize: "24px",
+              textAlign: "left",
+            }}
+          >
+            Do what is best for your health with your personalized
+            research-based sleep tips!
+          </h2>,
+          <h2
+            className="Typography_typography-h2 _nV2DM"
+            style={{
+              color: "rgb(16, 25, 38)",
+              fontWeight: 300,
+              fontSize: "24px",
+              textAlign: "left",
+            }}
+          >
+            Better health, brighter moods, more energy — it all starts with
+            sleep
+          </h2>,
+          <div
+            style={{
+              textAlign: "right",
+              fontSize: "16px",
+            }}
+          >
+            <strong>
+              Consider seeking help from a sleep specialist to address
+              underlying sleep disorders.
+            </strong>
+            <br />
+            <strong>
+              Get morning light, as sunlight is the main controller of the
+              natural body clock. Natural sunlight is best,even on cloudy days.
+              Try to step outside for at least 20 minutes within 1 hour of
+              waking.
+            </strong>
+            <br />
+            <strong>
+              Set a consistent bedtime. There are certain times at night that
+              your body will be able to sleep better than others. If you feel
+              sleepy but your brain is busy thinking, it can't shut off and go
+              to sleep. Try write down the things that concern you to review and
+              attend to the following day.
+            </strong>
+            <br />
+            <strong>
+              Create a comfortable sleep environment, a place that is cool,
+              dark, and quiet.
+            </strong>
+            <br />
+            <strong>
+              Prepare yourself for sleep before bed, by committing to some
+              relaxation techniques, such as slow breathing or yoga
+            </strong>
+            <br />
+            <strong>
+              Limit screen time before bed and limit watching TV whilst in bed.
+              Mobile phones and all electronic devices make it harder for your
+              brain to turn off, and even dim light from devices may delay the
+              release of the hormone melatonin, interfering with your body
+              clock.
+            </strong>
+            <br />
+            <strong>
+              Engage in regular physical activity during the day to promote
+              better gnerael health, as well as sleep at night.
+            </strong>
+            <br />
+            <strong>
+              If you cannot fall asleep in 15-20 minutes, get out of bed and do
+              a quiet activity — read a book, or journal with dim lighting until
+              you feel drowsy, then return to bed.
+            </strong>
+            <br />
+            <strong>
+              Try to avoid day naps, or limit them to 20 minutes in the early
+              afternoon.
+            </strong>
+          </div>,
+        ];
+      default:
+        return [];
+    }
+  };
+  const onSaveNotes = React.useCallback(() => {
+    updateSleepNotes({
+      variables: {
+        sleepId: sleep._id,
+        notes: notesRef.current.value,
+      },
+    });
+  }, [updateSleepNotes, sleep]);
+
+  
 
   return (
-    <div className="container mx-auto" style={{ textAlign: 'center', color: 'white', border: '1px solid #ccc', padding: '10px', marginTop: '40px' }}>
+    <div
+      className="container mx-auto"
+      style={{
+        textAlign: "center",
+        color: "white",
+        border: "1px solid #ccc",
+        padding: "20px",
+        marginTop: "40px",
+      }}
+    >
       <h2>Your Plan</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
+        <>
         <div>
-          {sleep.map((item, index) => (
-            <p key={index}>{item}</p>
-          ))}
+          {generateSleepPlan(sleep.category)}
         </div>
+        <div>
+          <h2>Notes</h2>
+          <textarea rows="4" cols="50" name="notes" value={sleep.notes} ref={notesRef} />
+          <button onClick={onSaveNotes}>Save</button> 
+        </div>
+        </>
+
       )}
-      {/*<div style={{ fontSize: "20px", color: "white" }}>
-        {JSON.stringify(sleep)}
-          </div>*/}
+
+    
       {/* video component here */}
       <br />
       <br />
-      <video controls>
-        <source src="path/to/your/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div>
+        <video width="320" height="240" controls>
+          <source src="assets/Sleepvid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
+
   );
 };
 
 export default YourPlan;
 
 //https://vimeo.com/806947756?share=copy
-  
-     
-  
-      {/*<header className="text-center py-8">
+
+{
+  /*<header className="text-center py-8">
        <h1 className="text-4xl text-white font-bold">Your Plan</h1>
      </header>
      <div className="px-8">
@@ -160,4 +403,5 @@ return (
     </div>
   </div>
 );
-};*/}
+};*/
+}

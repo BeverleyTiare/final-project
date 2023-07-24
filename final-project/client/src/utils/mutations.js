@@ -30,66 +30,22 @@ export const ADD_USER = gql`
 
 // add sleep
 export const ADD_SLEEP = gql`
-  mutation addSleep($responses: [ResponseInput]!, $score: Int!, $category: String!, $plan: [String]!) {
-    addSleep(responses: $responses, score: $score, category: $category, plan: $plan) {
+  mutation addSleep($responses: [ResponseInput]!, $score: Int!, $category: String!) {
+    addSleep(responses: $responses, score: $score, category: $category) {
      _id 
     }
   }
 `;
 
-//#add sleep score
-export const ADD_SLEEP_SCORE = gql`
-  mutation addSleepScore($sleepScore: Int!) {
-    addSleepScore(sleepScore: $sleepScore) {
-      _id
-      sleepScore
-    }
-  }
-`;
 
-//#add sleep category
-export const ADD_SLEEP_CATEGORY = gql`
-  mutation addSleepCategory($sleepCategory: String!) {
-    addSleepCategory(sleepCategory: $sleepCategory) {
+//update sleep notes
+export const UPDATE_SLEEP_NOTES = gql`
+  mutation updateSleepNotes($sleepId: ID!, $notes: String!) {
+    updateSleepNotes(sleepId: $sleepId, notes: $notes) {
       _id
-      sleepCategory
-    }
-  }
-`;
-
-//update sleep plan
-export const UPDATE_SLEEP_PLAN = gql`
-  mutation updateSleepPlan($sleepId: ID!, $plan: String!) {
-    updateSleepPlan(sleepId: $sleepId, plan: $plan) {
-      _id
-      plan
+      notes
     }
   }
 `;
 
 
-
-
-/*export const ADD_COMMENT = gql`
-  mutation addComment(
-    $thoughtId: ID!
-    $commentText: String!
-    $commentAuthor: String!
-  ) {
-    addComment(
-      thoughtId: $thoughtId
-      commentText: $commentText
-      commentAuthor: $commentAuthor
-    ) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
-    }
-  }
-`;*/

@@ -13,19 +13,17 @@ const Epigenetics = () => {
           <Container>
             <Row style={{ justifyContent: "center", padding: "10px" }}>
               <Col md={7} style={{ justifyContent: "center", paddingTop: "30px", paddingBottom: "50px", textAlign: "left" }}>
-                <strong>Epigenetics is the study of how your behaviors and environment can cause changes that affect the way your genes work.</strong>
+                <strong>Epigenetics is the study of how your behaviors and environment can cause changes that affect the way your genes work.
+                Unlike genetic changes, epigenetic changes are reversible and do not change your DNA sequence, but they can change how your body reads a DNA sequence.</strong>
                 <br />
                 <br />
-                Unlike genetic changes, epigenetic changes are reversible and do not change your DNA sequence, but they can change how your body reads a DNA sequence.
-                <br />
-                <br />
-                When we look at the link between sleep and the epigenome, recent studies show clear evidence that epigenetic alterations occur following sleep deprivation.
+                When we look at the link between sleep and the epigenome, recent studies show clear evidence that <i>epigenetic alterations occur following sleep deprivation</i>.
                 <br />
                 <br />
                 <strong>So, what are the effects of poor quality sleep?</strong>
                 <br />
                 Sleep deprivation disrupts the lives of millions of people every day and has a profound impact on the molecular biology of the brain.
-                These changes utlimately result in alterations in neuronal plasticity and dysregulation of many cognitive functions including - learning and memory.
+                These changes utlimately result in alterations in neuronal plasticity and dysregulation of many cognitive functions including - <i>learning and memory</i>.
                 <br />
                 <br />
                 The epigenome (which modifies the genome) plays a critical role in regulating gene expression in the context of memory storage.
@@ -37,14 +35,14 @@ const Epigenetics = () => {
                 These effects on the regulation of gene expression focus on the most common epigenetic mechanisms:
                 <br />
                 <br />
-                (i) DNA methylation;
+                (i) <i>DNA methylation</i>;
                 DNA methylation works by adding a chemical group to DNA. Typically, this group is added to specific places on the DNA, where it blocks the proteins that attach to DNA to “read” the gene.
                 <br />
                 <br />
                 This chemical group can be removed through a process called demethylation. Typically, methylation turns genes “off” and demethylation turns genes “on.”
                 <br />
                 <br />
-                (ii) Histone modifications;
+                (ii) <i>Histone modifications</i>;
                 DNA wraps around proteins called histones. When histones are tightly packed together, proteins that ‘read’ the gene cannot access the DNA as easily, so the gene is turned “off.”
                 <br />
                 <br />
@@ -54,7 +52,7 @@ const Epigenetics = () => {
                 Chemical groups can be added or removed from histones to make the histones more tightly or loosely packed, turning genes “off” or “on.”
                 <br />
                 <br />
-                (iii) Non-coding RNAs
+                (iii) <i>Non-coding RNAs</i>;
                 Your DNA is used as instructions for making coding and non-coding RNA.
                 <br />
                 <br />
@@ -64,7 +62,11 @@ const Epigenetics = () => {
                 Non-coding RNA may also recruit proteins to modify histones to turn genes “on” or “off.”
                 <br />
                 <br />
-                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5835037/" className="text-white">Learn more</a>
+                {/*<Text style={{color: 'light-blue'}}
+                  onPress={() => Linking.openURL('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5835037/')}>
+                  Google
+                </Text>*/}
+                {/*<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5835037/" className="text-white">Learn more</a>*/}
               </Col>
             </Row>
           </Container>

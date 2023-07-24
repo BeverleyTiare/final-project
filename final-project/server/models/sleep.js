@@ -19,12 +19,11 @@ const sleepSchema = new Schema({
         type: String,
         required: true,
     },
-    
-    plan : {
-        type: [String],
-        required: true,
-    },
 
+    notes: {
+        type: String,
+        required: false,
+    },
     //how to return response
     responses: [
         {
