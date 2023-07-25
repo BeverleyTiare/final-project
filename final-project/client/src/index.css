@@ -112,9 +112,12 @@ path{
   width: 100%;
 }
 
-#yourplanContents {
-
-}
+/*#yourplanContents {
+  text-align: "center",
+  text-color: "white",
+  padding: "20px",
+  marginTop: "40px"
+}*/
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';

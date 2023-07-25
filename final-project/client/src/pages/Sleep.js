@@ -305,6 +305,5 @@ const SleepQuestionnaire = () => {
 };
 
 //onChange: event handler to update the responses object with the new value for the question
-//Take a quiz to "update your score" after engaging in your "sleep plan" in four weeks: have as msg on ecah plan!
 
 export default SleepQuestionnaire;

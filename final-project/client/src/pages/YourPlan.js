@@ -5,25 +5,6 @@ import { QUERY_SLEEP_DATA } from "../utils/queries"; // import our query
 import Auth from "../utils/auth";
 import { Container, Row, Col } from "react-bootstrap";
 import { UPDATE_SLEEP_NOTES } from "../utils/mutations";
-//import background from "./assets/nightsky.mp4";
-
-/*class App extends Component {
-  render() {
-    const myStyle={
-        backgroundImage: `url(${background})`,
-        height:'100vh',
-        marginTop:'-70px',
-        fontSize:'50px',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-    };
-    return (
-      <div style={myStyle}>
-        <h1>Your Plan</h1>
-      </div>
-    );
-  }
-}*/
 
 const YourPlan = () => {
 const { loading, data } = useQuery(QUERY_SLEEP_DATA);
@@ -37,22 +18,22 @@ const sleep = data?.sleep || {};
       case "Few sleep issues":
         return [
           <h2
-            className="Typography_typography-h2 _nV2DM"
+            className="paragraph-text"
             style={{
               color: "#e9e9e9",
-              fontWeight: 300,
-              fontSize: "24px",  
+              fontWeight: 600,
+              fontSize: "20px",  
             }}
           >
             Optimize your sleep, activity, recovery and wellness with your personalized
             research-based sleep tips
           </h2>,
           <h2
-            className="Typography_typography-h2 _nV2DM"
+            className="paragraph-text"
             style={{
               color: "#e9e9e9",
-              fontWeight: 300,
-              fontSize: "24px",
+              fontWeight: 600,
+              fontSize: "20px",
               
             }}
           >
@@ -64,7 +45,6 @@ const sleep = data?.sleep || {};
               fontSize: "18px",
               marginTop: "60px",
               fontWeight: "600",
-              listStyleType: "lower-latin"
             }}
           >
             <p>
@@ -93,11 +73,11 @@ const sleep = data?.sleep || {};
       case "Moderate sleep issues":
         return [
           <h2
-            className="Typography_typography-h2 _nV2DM"
+            className="paragraph-text"
             style={{
               color: "#e9e9e9",
-              fontWeight: 300,
-              fontSize: "24px",
+              fontWeight: 600,
+              fontSize: "20px",
              
             }}
           >
@@ -105,11 +85,11 @@ const sleep = data?.sleep || {};
             research-based sleep tips
           </h2>,
           <h2
-            className="Typography_typography-h2 _nV2DM"
+            className="paragraph-text"
             style={{
               color: "#e9e9e9",
-              fontWeight: 300,
-              fontSize: "24px",
+              fontWeight: 600,
+              fontSize: "20px",
               
             }}
           >
@@ -120,7 +100,6 @@ const sleep = data?.sleep || {};
               textAlign: "left",
               fontSize: "18px",
               marginTop: "60px",
-              listStyleType: "lower-latin"
             }}
           >
             <p>
@@ -158,11 +137,11 @@ const sleep = data?.sleep || {};
       case "Significant sleep issues":
         return [
           <h2
-            className="Typography_typography-h2 _nV2DM"
+            className="paragraph-text"
             style={{
               color: "#e9e9e9",
-              fontWeight: 300,
-              fontSize: "24px",
+              fontWeight: 600,
+              fontSize: "20px",
               
             }}
           >
@@ -170,11 +149,11 @@ const sleep = data?.sleep || {};
             research-based sleep tips
           </h2>,
           <h2
-            className="Typography_typography-h2 _nV2DM"
+            className="paragraph-text"
             style={{
               color: "#e9e9e9",
-              fontWeight: 300,
-              fontSize: "24px",
+              fontWeight: 600,
+              fontSize: "20px",
               
             }}
           >
@@ -182,10 +161,9 @@ const sleep = data?.sleep || {};
           </h2>,
           <div
             style={{
-              textAlign: "left",
+              textAlign: "center",
               fontSize: "18px",
               marginTop: "60px",
-              listStyleType: "lower-latin"
             }}
           >
             <p>
@@ -247,7 +225,7 @@ const sleep = data?.sleep || {};
         return [];
     }
   };
-  //
+//call
   const onSaveNotes = React.useCallback(() => {
     updateSleepNotes({
       variables: {
@@ -260,10 +238,13 @@ const sleep = data?.sleep || {};
   
 // Function to render the sleep plan
   return (
-    <><video autoPlay muted loop id="backgroundVideo">
-    <source src="./assets/nightsky.mp4" type="video/mp4"/>
-  </video>
- 
+    <>
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+        <video autoPlay muted loop id="backgroundVideo" style={{ width: '100%', height: '100%' }}>
+          <source src="./assets/nightsky.mp4" type="video/mp4" />
+        </video>
+      </div>
+
     <div id="yourplanContainer">
     <div
       id="yourplanContents"
@@ -276,7 +257,7 @@ const sleep = data?.sleep || {};
 
       }}
     >
-      <h2 style={{marginTop: "20px"}}>Your Plan</h2>
+      <h2 style={{marginTop: "20px"}}>YOUR PLAN</h2>
       {loading ? (
         <p>Loading...</p>
       ) : 
@@ -287,7 +268,7 @@ const sleep = data?.sleep || {};
             {generateSleepPlan(sleep.category)}
           </div>
           <div>
-            <h2>Notes</h2>
+            <h2>NOTES</h2>
             <textarea style={{backgroundColor: "#e9e9e9", color: "black", padding: "8px", fontSize: "18px", borderRadius: "7px"}} rows="4" cols="50" name="notes" value={sleep.notes} ref={notesRef} />
             <br />
             <button class="bg-transparent mt-4 text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded ml-4" onClick={onSaveNotes}>Save</button> 
@@ -310,7 +291,7 @@ const sleep = data?.sleep || {};
 export default YourPlan;
 
 
-//use content??
+//use content at later stage?
   /*<header className="text-center py-8">
        <h1 className="text-4xl text-white font-bold">Your Plan</h1>
      </header>
@@ -393,8 +374,5 @@ export default YourPlan;
     </div>
   );
 };
-
-//whole background image : `url(${sleepImage}) center center no-repeat`,
-        backgroundSize: "cover",
 
 export default YourPlan;*/

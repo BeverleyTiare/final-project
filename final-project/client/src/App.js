@@ -1,4 +1,4 @@
-
+//App.js: main component in React which acts as a container for all other components.
 import React from 'react';
 import {
   ApolloClient,

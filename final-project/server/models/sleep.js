@@ -1,4 +1,4 @@
-//Moongoose model for sleep
+//Mongoose model for sleep
 const {Schema, model} = require('mongoose');
 
 const sleepSchema = new Schema({

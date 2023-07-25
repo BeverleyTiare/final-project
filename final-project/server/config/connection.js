@@ -11,3 +11,6 @@ mongoose.connect(
 );
 
 module.exports = mongoose.connection;
+
+
+//MongoDB: document-oriented NoSQL database: Mongoose - Object Data Modeling (ODM) library for Node. js that provides a higher-level abstraction layer on top of MongoDB, ... to define data models using a schema-based approach.

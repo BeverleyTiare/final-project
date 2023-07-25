@@ -61,7 +61,7 @@ const resolvers = {
           score,
           category,
         });
-        console.log(sleep, "sleep aded");
+        console.log(sleep, "sleep added");
         return sleep;
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -84,5 +84,3 @@ const resolvers = {
 
 module.exports = resolvers;
 
-//in graphql : mutation addProfile($addProfileName: String!, $addProfileEmail: String!, $addProfilePassword: String!) { addProfile(name: $addProfileName, email: $addProfileEmail, password: $addProfilePassword) { token profile { _id name email } } }
-//if copy token secret from .env file and paste it into the jwt.io website, it will decode the token.

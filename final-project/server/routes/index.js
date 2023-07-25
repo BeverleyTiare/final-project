@@ -4,7 +4,7 @@ const { authMiddleware } = require('../../utils/auth');
 const { route } = require('./user-routes');
 
 
-// GET all users
+// Get all users  
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }

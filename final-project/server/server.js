@@ -24,7 +24,7 @@ app.use(express.json());
 // Serve up static assets
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-// express middleware that will intercepts all client requests and if no other route defined, send back the React HTML
+// express middleware that will intercept all client requests and if no other route defined, send back the React HTML
 app.get(['/', '/sleep', '/yourplan', '/login', '/signup'],(req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });

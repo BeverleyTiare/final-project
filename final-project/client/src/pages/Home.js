@@ -20,7 +20,8 @@ const Home = () => {
             <p> Also, examining the link between epigenetics and sleep is vital, given the association between sleep and many complex health disorders.</p>
             <br/>
             <p className="my-4" style={{ textAlign: 'left', color: 'lightblue', paddingBottom: '20%' }}>
-              <strong>DO YOU WANT TO LEARN HOW TO OPTIMIZE YOUR HEALTH THROUGH QUALITY SLEEP? EXPLORE OUR SLEEP SURVEY TO RECEIVE YOUR PERSONALIZED SLEEP PLAN</strong>
+              <strong>DO YOU WANT TO LEARN HOW TO OPTIMIZE YOUR HEALTH THROUGH QUALITY SLEEP?
+                      EXPLORE OUR SLEEP SURVEY TO RECEIVE YOUR PERSONALIZED SLEEP PLAN</strong>
             </p>
             <Link to="/epigenetics">ENTER EPIGENETICS AND SLEEP...</Link>
           </div>
@@ -43,7 +44,7 @@ const Home = () => {
         </div>
       </div>
 
-
+      {/* Health content */}
       <div id="healthcare" className="container mx-auto mb-12">
         <div className="flex items-center justify-center h-screen">
           <div className="bg-grey text-white font-bold rounded-lg border shadow-lg p-10">

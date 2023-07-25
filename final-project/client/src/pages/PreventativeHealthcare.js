@@ -12,6 +12,8 @@ const PreventativeHealthcare = () => {
         <strong>Brain Health is a critical piece of your overall health. It underlies your ability to move, communicate, make decisions, problem solve and live a productive meaningful life. Because the brain controls so much of our daily function, it is arguably the most singular important part of human function and behaviour</strong>
         <br/>
         <br/>
+        <br/>
+        <br/>
         Neuroplasticity is the ability of the brain to change in response to experiences: this experience-driven change occurs in both neural structure and function. 
         <br /> 
         <br /> 

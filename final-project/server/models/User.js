@@ -25,7 +25,7 @@ const userSchema = new Schema({
 });
 
 
-// Set up pre-save middleware to create password
+// Set up pre-save middleware to create password and bcrypt
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
