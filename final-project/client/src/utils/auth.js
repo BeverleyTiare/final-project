@@ -39,5 +39,5 @@ class AuthService {
     window.location.assign('/');
   }
 }
-// eslint-disable-next-line
+// function enables us to use the AuthService class in other files
 export default new AuthService();

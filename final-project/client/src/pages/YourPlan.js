@@ -5,13 +5,32 @@ import { QUERY_SLEEP_DATA } from "../utils/queries"; // import our query
 import Auth from "../utils/auth";
 import { Container, Row, Col } from "react-bootstrap";
 import { UPDATE_SLEEP_NOTES } from "../utils/mutations";
+//import background from "./assets/nightsky.mp4";
+
+/*class App extends Component {
+  render() {
+    const myStyle={
+        backgroundImage: `url(${background})`,
+        height:'100vh',
+        marginTop:'-70px',
+        fontSize:'50px',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+    };
+    return (
+      <div style={myStyle}>
+        <h1>Your Plan</h1>
+      </div>
+    );
+  }
+}*/
 
 const YourPlan = () => {
 const { loading, data } = useQuery(QUERY_SLEEP_DATA);
 const [updateSleepNotes, { error, updateData }] = useMutation(UPDATE_SLEEP_NOTES);
 const notesRef = React.useRef();
 const sleep = data?.sleep || {};
-
+ 
   //function to generate sleep plans based on the sleep category
   const generateSleepPlan = (category) => {
     switch (category) {
@@ -21,33 +40,31 @@ const sleep = data?.sleep || {};
             className="Typography_typography-h2 _nV2DM"
             style={{
               color: "#e9e9e9",
-
               fontWeight: 300,
-              fontSize: "24px",
-              
+              fontSize: "24px",  
             }}
           >
-            Do what is best for your health with your personalized
-            research-based sleep tips!
+            Optimize your sleep, activity, recovery and wellness with your personalized
+            research-based sleep tips
           </h2>,
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
               color: "#e9e9e9",
-
               fontWeight: 300,
               fontSize: "24px",
               
             }}
           >
-            Better health, brighter moods, more energy — it all starts with
-            sleep
+            Sleep is the foundation of your physical health, mental health and energy levels — explore your unique sleep plan...
+
           </h2>,
           <div
             style={{
               fontSize: "18px",
               marginTop: "60px",
-              fontWeight: "600"
+              fontWeight: "600",
+              listStyleType: "lower-latin"
             }}
           >
             <p>
@@ -79,37 +96,35 @@ const sleep = data?.sleep || {};
             className="Typography_typography-h2 _nV2DM"
             style={{
               color: "#e9e9e9",
-
               fontWeight: 300,
               fontSize: "24px",
-              
+             
             }}
           >
-            Do what is best for your health with your personalized
-            research-based sleep tips!
+            Optimize your sleep, activity, recovery and wellness with your personalized
+            research-based sleep tips
           </h2>,
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
               color: "#e9e9e9",
-
               fontWeight: 300,
               fontSize: "24px",
               
             }}
           >
-            Better health, brighter moods, more energy — it all starts with
-            sleep
+            Sleep is the foundation of your physical health, mental health and energy levels — explore your unique sleep plan...
           </h2>,
           <div
             style={{
               textAlign: "left",
               fontSize: "18px",
               marginTop: "60px",
+              listStyleType: "lower-latin"
             }}
           >
             <p>
-              Get morning light, as sunlight is the main controller of the
+            Get morning light, as sunlight is the main controller of the
               natural body clock. Natural sunlight is best, even on cloudy days.
               Try to step outside for at least 20 minutes within 1 hour of
               waking.
@@ -146,33 +161,31 @@ const sleep = data?.sleep || {};
             className="Typography_typography-h2 _nV2DM"
             style={{
               color: "#e9e9e9",
-
               fontWeight: 300,
               fontSize: "24px",
               
             }}
           >
-            Do what is best for your health with your personalized
-            research-based sleep tips!
+            Optimize your sleep, activity, recovery and wellness with your personalized
+            research-based sleep tips
           </h2>,
           <h2
             className="Typography_typography-h2 _nV2DM"
             style={{
               color: "#e9e9e9",
-
               fontWeight: 300,
               fontSize: "24px",
               
             }}
           >
-            Better health, brighter moods, more energy — it all starts with
-            sleep
+            Sleep is the foundation of your physical health, mental health and energy levels — explore your unique sleep plan...
           </h2>,
           <div
             style={{
               textAlign: "left",
               fontSize: "18px",
               marginTop: "60px",
+              listStyleType: "lower-latin"
             }}
           >
             <p>
@@ -215,7 +228,7 @@ const sleep = data?.sleep || {};
             <br />
             <p>
               Engage in regular physical activity during the day to promote
-              better gnerael health, as well as sleep at night.
+              better general health, as well as sleep at night.
             </p>
             <br />
             <p>
@@ -234,6 +247,7 @@ const sleep = data?.sleep || {};
         return [];
     }
   };
+  //
   const onSaveNotes = React.useCallback(() => {
     updateSleepNotes({
       variables: {
@@ -244,17 +258,21 @@ const sleep = data?.sleep || {};
   }, [updateSleepNotes, sleep]);
 
   
-
+// Function to render the sleep plan
   return (
+    <><video autoPlay muted loop id="backgroundVideo">
+    <source src="./assets/nightsky.mp4" type="video/mp4"/>
+  </video>
+ 
+    <div id="yourplanContainer">
     <div
+      id="yourplanContents"
       className="container mx-auto"
       style={{
         textAlign: "center",
         color: "white",
-        border: "1px solid #ccc",
         padding: "20px",
-        marginTop: "40px",
-        background : "#29072d"
+        marginTop: "40px"
 
       }}
     >
@@ -282,19 +300,17 @@ const sleep = data?.sleep || {};
         
       }
        
-
-      
-
     </div>
+    </div>
+    </>
 
   );
 };
 
 export default YourPlan;
 
-//https://vimeo.com/806947756?share=copy
 
-{
+//use content??
   /*<header className="text-center py-8">
        <h1 className="text-4xl text-white font-bold">Your Plan</h1>
      </header>
@@ -378,41 +394,7 @@ export default YourPlan;
   );
 };
 
-export default YourPlan;
+//whole background image : `url(${sleepImage}) center center no-repeat`,
+        backgroundSize: "cover",
 
-
-//TODO
-  // when clicking "Update Notes"
-  // run `newNotes = prompt('What should the notes be?', data.sleep.notes)`
-  // updateSleepNotes(data.sleep._id, newNotes)
-
-
-//Video: update! https://vimeo.com/806947756?share=copy
-//<div>
-//<div style={{padding:"91.67% 0 0 0", position: "relative"}}><iframe src="https://player.vimeo.com/video/842391142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position: "absolute", top:0,left:0,width:"100%",height:"100%",}} title="sleep vid"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-//</div>
-
-//PREV CODE
-return (
-  <div className="container mx-auto">
-    <div className="px-8">
-    {Auth.loggedIn() ? (
-      <>
-       {loading ? (
-          <div>Loading...</div>
-        ) : (
-          JSON.stringify(sleep)
-        )}
-       
-      </>
-    ) : (
-      <p>
-        You need to be logged in to view your plans. Please{' '}
-        <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-      </p>
-    )}
-    </div>
-  </div>
-);
-};*/
-}
+export default YourPlan;*/

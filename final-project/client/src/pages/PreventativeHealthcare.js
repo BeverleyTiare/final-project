@@ -28,15 +28,12 @@ const PreventativeHealthcare = () => {
         <br />  
         Our thoughts and actions also play a role in brain plasticity: repeated thoughts or behaviours strengthen synapses, forming habits - which then become ‘automated’ and stored in the subcortical brain. 
         So, habits become 'wired in' while lesser-used connections are pruned away. 
-          <br />
-          <br />
+        <br />
+        <br />
         Automated behaviours permanently stored in the subcortical region may however, not contribute to our potential across the life span. 
          As all habits are triggered by cues i.e. a place, person, event or even emotional state. If the cue can be identified, a new more useful behaviour can then be learned in response.   
          <br />  
          <br /> 
-        </p>
-        <a href="https://www.americanbrainfoundation.org/why-sleep-matters-for-brain-health/">Learn more</a>
-        <p className="my-4 text-white" style={{ textAlign: 'left', paddingRight: '20%' }}>
         <strong> Our brain is the powerhouse of regulating function, interpretating sensory information, emotion processing, and the foundation of intelligence, memory and creativity.</strong>  
         <i>And the brain is constantly active, even when we sleep. </i>
         <br /> 
@@ -52,6 +49,8 @@ const PreventativeHealthcare = () => {
         <br />
         <br />
         The key to maintaining improvements is to find something that you enjoy and sustain the practice over time. it is better to do something for a few minutes every one to two days then spend a longer period of time once per week.
+        <br />
+        <br />
         </p>
         <p className="my-4" style={{ textAlign: 'left', color: 'lightblue', paddingBottom: '20%' }}>
                 <strong>To learn evidence-based tips to promote quality sleep & preventative healthcare complete our survey and receive your personalized sleep plan!</strong>

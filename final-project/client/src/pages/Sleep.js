@@ -254,7 +254,7 @@ const SleepQuestionnaire = () => {
   };
 
  
-
+//function to handle form submission
   const handleSubmit = useCallback(
     (sender, options) => {
       let responses = [];
@@ -270,7 +270,7 @@ const SleepQuestionnaire = () => {
         const sleepScore = calculateSleepScore(sender.data);
         const sleepCategory = getSleepCategory(sleepScore);
    
-
+//addSleep mutation
         addSleep({
           variables: {
             responses: responses,

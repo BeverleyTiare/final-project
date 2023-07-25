@@ -1,3 +1,4 @@
+//Moongoose model for sleep
 const {Schema, model} = require('mongoose');
 
 const sleepSchema = new Schema({
@@ -24,7 +25,7 @@ const sleepSchema = new Schema({
         type: String,
         required: false,
     },
-    //how to return response
+    //how to return responses...
     responses: [
         {
         name: {

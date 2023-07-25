@@ -1,4 +1,4 @@
-
+//function to save data to local storage
 const LOCAL_STORAGE_KEY = 'sleepApp';
 
 export const saveToLocalStorage = (data) => {

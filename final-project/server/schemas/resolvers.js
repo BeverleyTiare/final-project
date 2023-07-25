@@ -1,4 +1,4 @@
-//  create the resolvers for the User model and sleep model.
+//  create the resolvers for the User model and Sleep model.
 const { AuthenticationError } = require("apollo-server-express");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
@@ -14,11 +14,7 @@ const resolvers = {
       return User.findOne({ username }).populate("sleeps");
     },
 
-    /*
-    sleeps: async () => {
-      return Sleep.find().sort({ createdAt: -1 });
-    },
-    */
+    //Function to get the sleep data for the logged in user
     sleep: async (_parent, _params, context) => {
       if (context.user) {
         return await Sleep.findOne(
@@ -31,9 +27,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
   },
-  //sleep: async (parent, { sleepId }) => {
-  //  return Sleep.findOne({ _id: sleepId });
-  //},
+  
 
   Mutation: {
     addUser: async (parent, args) => {
@@ -57,6 +51,8 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+
+    //addSleep function to add sleep data to the database
     addSleep: async (parent, { responses, score, category }, context) => {
       if (context.user) {
         const sleep = await Sleep.create({
@@ -71,6 +67,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     
+    //updateSleepNotes function to update the notes for a sleep entry
     updateSleepNotes: async (parent, { sleepId, notes }, context) => {
       if (context.user) {
         const sleep = await Sleep.findOneAndUpdate(

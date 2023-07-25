@@ -35,7 +35,6 @@ const Home = () => {
             <h1>Sleep</h1>
             <p>Sleep is the foundation of physical health, mental health and human performance across all life settings.</p>
             <p>AND Sleep research highlights the impact of quality sleep upon cognitive function, immunity, physiological healing, longevity and so much more.</p>
-            <Link to="/SleepData">ENTER SLEEP...</Link>
             <div className="px-8">
               <br/>
               <img src='./assets/sleep.png' alt="sleep image" />
@@ -51,7 +50,6 @@ const Home = () => {
             <h1>Preventative Healthcare</h1>
             <p>Primary prevention refers to actions aimed at avoiding the manifestation of a disease through implementation of systemic resources and health services.</p>
             <p>Prevention hinges very much on your sleep, exercise, environment, diet and access so to optimize physical and mental health.</p>
-            <Link to="/healthcare">ENTER PREVENTATIVE HEALTHCARE...</Link>
             <div className="px-8">
               <br/>
               <img src='./assets/Health.png' alt="nature image" />

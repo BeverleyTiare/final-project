@@ -36,7 +36,7 @@ module.exports = {
   },
 };
 
-//RM below??
+//Include later...
 // const decode = require('jwt-decode');
 
 // class AuthService {

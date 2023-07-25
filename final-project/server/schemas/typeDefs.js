@@ -52,4 +52,3 @@ module.exports = typeDefs;
 
 //Mutations are used to modify data; enables us to create, update, and delete data
 
-//  updateSleepPlan(sleepId: ID!, plan: String!): Sleep

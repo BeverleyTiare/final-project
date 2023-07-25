@@ -1,4 +1,5 @@
 // This file is the entry point for the server: express, apollo, and mongoose are initialized here
+//auth middleware enables the server to authenticate the user with every request
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
@@ -16,7 +17,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-// Middleware
+// Middleware enables the server to parse data
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -24,16 +25,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 // express middleware that will intercepts all client requests and if no other route defined, send back the React HTML
-/*app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/public/index.html'));
-});*/
-
 app.get(['/', '/sleep', '/yourplan', '/login', '/signup'],(req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 // #Creates a 'new instance of an Apollo server' with the 'GraphQL schema'
-//Prepare app for incoming requests
+//Prepares app for incoming requests
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });

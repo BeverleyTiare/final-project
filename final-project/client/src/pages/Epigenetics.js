@@ -62,10 +62,6 @@ const Epigenetics = () => {
                 Non-coding RNA may also recruit proteins to modify histones to turn genes “on” or “off.”
                 <br />
                 <br />
-                {/*<Text style={{color: 'light-blue'}}
-                  onPress={() => Linking.openURL('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5835037/')}>
-                  Google
-                </Text>*/}
                 {/*<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5835037/" className="text-white">Learn more</a>*/}
               </Col>
             </Row>
@@ -104,9 +100,6 @@ const Epigenetics = () => {
               <br />
               Sleep is associated also with emotion regulation, coping skills, and decision-making.
             </p>
-            <p className="my-4" style={{ textAlign: 'left', color: 'lightblue', paddingBottom: '20%' }}>
-                <strong>To learn evidence-based tips to promote quality sleep, complete our survey and receive your personalized sleep plan!</strong>
-          </p>
           </div>
         </Container>
       </div>

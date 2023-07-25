@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   ApolloClient,
@@ -16,8 +17,7 @@ import Sleep from './pages/Sleep';
 import Epigenetics from './pages/Epigenetics';
 import PreventativeHealthcare from './pages/PreventativeHealthcare';
 import YourPlan from './pages/YourPlan';
-// import SleepData from './pages/SleepData';
-// import Profile from './pages/Profile';
+
 
 // Construct main GraphQL API 'endpoint' that will connect ApolloClient instance with the GraphQL API
 const httpLink = createHttpLink({
@@ -43,6 +43,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// Wrap the App component in the ApolloProvider component to make every request work with the ApolloClient provider
 function App() {
   return ( 
     <ApolloProvider client={client}>

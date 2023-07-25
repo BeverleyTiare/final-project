@@ -1,8 +1,8 @@
-// Purpose: User model for the database
+//  User model for the database
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema
+// Import User schema
 const userSchema = new Schema({
   username: {
     type: String,
@@ -25,7 +25,7 @@ const userSchema = new Schema({
 });
 
 
-// set up pre-save middleware to create password
+// Set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
-//logout function
+//signup, login, logout, and getProfile methods are imported from the utils folder.
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();

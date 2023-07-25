@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; //
 import { useMutation } from '@apollo/client'; //mutation hook
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });//state for form data
-  const [login, { error, data }] = useMutation(LOGIN_USER);//
+  const [login, { error, data }] = useMutation(LOGIN_USER); //useMutation hook to execute loginUser mutation in the form's onSubmit function
 
   const handleChange = (event) => {
     const { name, value } = event.target;

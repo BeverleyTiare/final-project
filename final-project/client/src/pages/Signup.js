@@ -6,6 +6,7 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+//useState and useEffect hooks enable management of state in functional components
 const Signup = () => {
   const [formState, setFormState] = useState({
     name: '',
@@ -15,9 +16,11 @@ const Signup = () => {
     email: '',
     terms: false,
   });
+
 //mutation hook 
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
+  //function to handle form input changes
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
     const fieldValue = type === 'checkbox' ? checked : value;
