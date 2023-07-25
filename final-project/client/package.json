@@ -48,5 +48,8 @@
   },
   "devDependencies": {
     "cra-build-watch": "^3.4.0"
+  },
+  "overrides": {
+    "postcss-custom-properties": "^10.0.0"
   }
 }
