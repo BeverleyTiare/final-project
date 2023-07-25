@@ -5,9 +5,9 @@
     "main": "server/server.js",
     "scripts": {
       "develop": "cd server && npm run start",
-      "start": "cd client && npm run build && cd ../server && npm run start",
+      "start": "cd server && npm run start",
       "install": "cd server && npm i && cd ../client && npm i",
-      "seed": "cd server && npm run seed",
+      "seed": "cd server && npm run qseed",
       "build": "cd client && npm run build"
     },
     "keywords": [],
