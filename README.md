@@ -56,10 +56,9 @@ Make sure you have MongoDB installed and running on your local machine or provid
 - Server Configuration: Set up your MongoDB connection URL and other server configuration variables in the `.env` file located in the root directory.
 
 
-## Links : TODO
--   The URL of the deployed application:
+## Links :
+-   The URL of the deployed application: https://sleep-app-f8ee9b20e8be.herokuapp.com/
     
--   The URL of the GitHub repository: 
 
 ## License:
 MIT License
