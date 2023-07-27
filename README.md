@@ -73,13 +73,6 @@ Bootcamp TAs, tutors, opensource code sites, W3 schools, MDN, stackoverflow, med
 
 
 
-## Contact
-
-For any inquiries or questions, please contact : 
-
-
-
-
 
 
 
