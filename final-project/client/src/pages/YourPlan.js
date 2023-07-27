@@ -267,12 +267,12 @@ const sleep = data?.sleep || {};
           <div style={{padding: "26px"}}>
             {generateSleepPlan(sleep.category)}
           </div>
-          <div>
+          {/* <div>
             <h2>NOTES</h2>
             <textarea style={{backgroundColor: "#e9e9e9", color: "black", padding: "8px", fontSize: "18px", borderRadius: "7px"}} rows="4" cols="50" name="notes" value={sleep.notes} ref={notesRef} />
             <br />
             <button class="bg-transparent mt-4 text-white font-semibold hover:text-gray-300 py-2 px-4 border border-white rounded ml-4" onClick={onSaveNotes}>Save</button> 
-          </div>
+          </div> */}
           </>) 
         : 
         (<>
